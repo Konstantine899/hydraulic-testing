@@ -1,30 +1,20 @@
 import React from 'react';
 
-import { Address } from './Address';
-
 export const Org = (props) => {
-  let organizations = props.nav;
+  let dataOrg = props.data;
 
-  const listItemOrganization = organizations.map((organization) => {
-    const listItemAddress_01 = organization.objects.map((object) => (
-      <li>
-        <Address banana={object.address} />
-      </li>
-      // <li key={item.objects[0].address}>{item.objects[0].address}</li>
-    ));
-
+  const listItemOrg = dataOrg.map((itemOrg) => {
     return (
-      <li key={organization.org}>
-        {organization.org}
-        <ul>{listItemAddress_01}</ul>
-      </li>
+      <div>
+        <p>{itemOrg.org}</p> <img src={itemOrg.img} alt="" />
+      </div>
     );
   });
 
   return (
-    <ul>
-      {listItemOrganization}
-      {/* <li>{props.nav[0].objects[0].address}</li> */}
-    </ul>
+    <>
+      <div>Вывод списка организаций</div>
+      {listItemOrg}
+    </>
   );
 };

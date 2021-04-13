@@ -1,7 +1,5 @@
 import React from 'react';
 
-export const Address = (props) => {
-  const address = props.banana;
-
-  return <>{address}</>;
+export const Address = () => {
+  return <div>Список обслуживаемых адресов</div>;
 };
