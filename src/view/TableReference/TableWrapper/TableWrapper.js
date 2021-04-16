@@ -8,9 +8,11 @@ export const TableWrapper = () => {
   return (
     <>
       <div className="TableWrapper">
-        TableWrapper
-        <TableTh />
-        <TableTd />
+        <table>
+          TableWrapper
+          <TableTh />
+          <TableTd />
+        </table>
       </div>
     </>
   );
