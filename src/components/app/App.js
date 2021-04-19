@@ -3,7 +3,8 @@ import React from 'react';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { TableMainWrapper } from '../../view/TableReference/TableMainWrapper/TableMainWrapper.js';
+import { Table } from '../Table/Table.js';
+
 import './App.scss';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <>
       <Router>
         <Switch>
-          <Route exact path="/" component={TableMainWrapper} />
+          <Route exact path="/" component={Table} />
         </Switch>
       </Router>
     </>
