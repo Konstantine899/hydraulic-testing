@@ -8,7 +8,6 @@ export const TableMainWrapper = () => {
   return (
     <>
       <div className="TableMainWrapper">
-        <p>Обертка таблицы</p>
         <TableMain />
       </div>
     </>

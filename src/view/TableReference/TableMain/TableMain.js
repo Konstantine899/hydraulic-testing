@@ -5,14 +5,13 @@ import './TableMain.scss';
 import { TableFilter } from '../TableFilter/TableFilter.js';
 import { TableWrapper } from '../TableWrapper/TableWrapper.js';
 
+import { data } from '../../../../Temp/123.js';
+
 export const TableMain = () => {
   return (
     <>
-      <div className="TableMain">
-        <p>TableMain</p>
-        <TableFilter />
-        <TableWrapper />
-      </div>
+      <TableFilter />
+      <TableWrapper TableMainData={data} />
     </>
   );
 };

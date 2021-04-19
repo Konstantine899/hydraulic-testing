@@ -1,19 +1,17 @@
 import React from 'react';
+
 import './TableTd.scss';
 
-export const TableTd = () => {
+import { OrgList } from './OrgList/OrgList.js';
+
+export const TableTd = (props) => {
+  let tableTdOrg = props.TableTableWrapperData;
+
+  // console.log(tableTdOrg);
+
   return (
     <>
-      <div className="TableTd">
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </div>
+      <OrgList tableTdOrg={tableTdOrg} />
     </>
   );
 };

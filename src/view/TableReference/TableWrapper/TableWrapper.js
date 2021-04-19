@@ -4,16 +4,14 @@ import './TableWrapper.scss';
 import { TableTh } from '../TableTh/TableTh.js';
 import { TableTd } from '../TableTd/TableTd.js';
 
-export const TableWrapper = () => {
+export const TableWrapper = (props) => {
+  const TableWrapperData = props.TableMainData;
   return (
     <>
-      <div className="TableWrapper">
-        <table>
-          TableWrapper
-          <TableTh />
-          <TableTd />
-        </table>
-      </div>
+      <table>
+        <TableTh />
+        <TableTd TableTableWrapperData={TableWrapperData} />
+      </table>
     </>
   );
 };
