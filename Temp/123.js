@@ -4,6 +4,7 @@
 
 export const data = [
   {
+    id: 1,
     org: "Магазин 'Веста'",
     img:
       'https://www.flaticon.com/svg/vstatic/svg/4478/4478348.svg?token=exp=1618313344~hmac=fc69241ee052cf59631f6c0cc28ea57d',
@@ -25,6 +26,7 @@ export const data = [
     ],
   },
   {
+    id: 2,
     org: 'УО МегаАзаза',
     img:
       'https://www.flaticon.com/svg/vstatic/svg/4478/4478348.svg?token=exp=1618313344~hmac=fc69241ee052cf59631f6c0cc28ea57d',
@@ -41,6 +43,7 @@ export const data = [
     ],
   },
   {
+    id: 3,
     org: 'УK Ромашка',
     img:
       'https://www.flaticon.com/svg/vstatic/svg/4478/4478348.svg?token=exp=1618313344~hmac=fc69241ee052cf59631f6c0cc28ea57d',
