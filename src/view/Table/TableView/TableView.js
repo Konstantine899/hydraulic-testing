@@ -1,11 +1,10 @@
 import React from 'react';
-import './TableContainer.scss';
-
-import { OrgList } from '../OrgList/OrgList.js';
+import './TableView.scss';
+import { TableRows } from '../TableRows/TableRows.js';
 
 import { data } from '../../../../Temp/123.js';
 
-export const TableContainer = () => {
+export const TableView = () => {
   return (
     <React.Fragment>
       <div className="table-container">
@@ -19,7 +18,7 @@ export const TableContainer = () => {
             </tr>
           </thead>
           <tbody>
-            <OrgList orgList={data} />
+            <TableRows dataRows={data} />
           </tbody>
         </table>
       </div>

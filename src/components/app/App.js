@@ -3,7 +3,7 @@ import React from 'react';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { TableContainer } from '../../view/Table/TableContainer/TableContainer.js';
+import { TableView } from '../../view/Table/TableView/TableView.js';
 
 import './App.scss';
 
@@ -12,7 +12,7 @@ function App() {
     <>
       <Router>
         <Switch>
-          <Route exact path="/" component={TableContainer} />
+          <Route exact path="/" component={TableView} />
         </Switch>
       </Router>
     </>
