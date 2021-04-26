@@ -1,32 +1,20 @@
 import React from 'react';
-import { TableRow } from '../TableRow/TableRow.js';
 import './TableRows.scss';
 
 export const TableRows = (props) => {
-  // props.dataRows.map((organization) => {
-  //   organization.objects.map((orgAddress) => {
-  //     orgAddress.pipelines.map((pipeline) => {
-  //       console.log(
-  //         organization.org,
-  //         orgAddress.address,
-  //         pipeline.l,
-  //         pipeline.d
-  //       );
-  //       return organization.org, orgAddress.address, pipeline.l, pipeline.d;
-  //     });
-  //   });
-  // });
-
-  return (
-    <tr>
-      {props.dataRows.map((organization) =>
-        organization.objects.map((orgAddress) => {
-          orgAddress.pipelines.map((pipeline) => {
-            console.log(pipeline.d);
-            return <td>{pipeline.d}</td>;
-          });
-        })
-      )}
-    </tr>
-  );
+  return props.dataRows.map(function orgList(organization) {
+    return organization.objects.map(function orgAddress(orgAddress) {
+      return orgAddress.pipelines.map(function pipelineList(pipeline) {
+        console.log(pipeline);
+        return (
+          <tr>
+            <td>{organization.org}</td>
+            <td>{orgAddress.address}</td>
+            <td>{pipeline.d}</td>
+            <td>{pipeline.l}</td>
+          </tr>
+        );
+      }, orgAddress);
+    }, organization);
+  });
 };
