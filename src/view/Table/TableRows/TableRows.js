@@ -12,7 +12,7 @@ export const TableRows = (props) => {
             let pipelineD = pipeline.d;
             let pipelineL = pipeline.l;
 
-            console.log(orgIndex, organization.org);
+            // console.log(orgIndex, organization.org);
 
             return (
               <tr>

@@ -5,6 +5,10 @@ export const RowTestView = (props) => {
   return props.rowTestData.objects.map(function (object, index) {
     orgsPipelinesList += object.pipelines.length;
 
-    return console.log(index, 'Количество труб:', orgsPipelinesList);
+    // return props.rowTestData.map(function (organization, orgIndex) {
+    //   console.log(props);
+    // });
+
+    // return console.log(index, 'Количество труб:', orgsPipelinesList);
   });
 };

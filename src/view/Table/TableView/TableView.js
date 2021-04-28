@@ -4,6 +4,8 @@ import { TableRows } from '../TableRows/TableRows.js';
 
 import { data } from '../../../../Temp/123.js';
 
+import { Table } from '../../Table_001/Table.js';
+
 export const TableView = () => {
   return (
     <React.Fragment>
@@ -22,6 +24,7 @@ export const TableView = () => {
           </tbody>
         </table>
       </div>
+      <Table />
     </React.Fragment>
   );
 };

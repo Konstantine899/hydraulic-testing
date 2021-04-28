@@ -17,51 +17,6 @@ body {
 }
 
 #root {
-  // height: 100vh;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 20px;
+  flex-direction: row;
 }
-
-.ShadowWrapper {
-  border-radius: 8px;
-  border-top: 1px solid #737374;
-  border-left: 1px solid #464648;
-  border-right: 1px solid #464648;
-  border-bottom: 2px solid #464648;
-  box-shadow: 0 0 0 1px #1a1a1a, 0 8px 20px 6px #888;
-  overflow: hidden; // Переполняющее содержимое не отображается
-}
-.FormCalendarWrapper {
-  display: grid;
-  grid-template-rows: 1fr;
-  // grid-template-columns: repeat(2, 1fr);
-}
-.container {
-  // outline: 1px solid red;
-  background-color: #faebd7;
-}
-
-// table {
-//   margin-bottom: 100px;
-// }
-
-// table,
-// th,
-// td {
-//   text-align: center;
-//   border: 1px solid gray;
-// }
-
-// th,
-// td {
-//   width: 200px;
-//   height: 50px;
-// }
-
-// th {
-//   background-color: #1a1a1a;
-//   color: white;
-// }
