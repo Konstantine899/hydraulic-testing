@@ -1,26 +1,38 @@
 import React from 'react';
 
 import { CalcRowSpanOrg } from '../CalcRowSpanOrg/CalcRowSpanOrg.js';
+import { CalcRowSpanAddress } from '../CalcRowSpanAddress/CalcRowSpanAddress.js';
 
 export const RowOrg = (props) => {
-  return props.RowDataOrg.objects.map(function (AddressList, IndexAddress) {
-    return AddressList.pipelines.map(function (pipelineList, IndexPipeline) {
-      const rowspan = CalcRowSpanOrg({
-        CalcDataPipelinesOrg: props.RowDataOrg,
-      });
+  const OrgRowSpan = CalcRowSpanOrg({
+    CalcDataPipelinesOrg: props.RowDataOrg,
+  });
 
-      let orgTd = <td rowSpan={rowspan}>{props.RowDataOrg.org}</td>;
+  const AddressRowSpan = CalcRowSpanAddress();
+
+  console.log(OrgRowSpan);
+
+  return props.RowDataOrg.objects.map(function (Address, IndexAddress) {
+    return Address.pipelines.map(function (pipeline, IndexPipeline) {
+      let orgTd = <td rowSpan={OrgRowSpan}>{props.RowDataOrg.org}</td>;
+      let addressTd = (
+        <td rowSpan={Address.pipelines.length}>{Address.address}</td>
+      );
 
       if (IndexAddress > 0 || IndexPipeline > 0) {
         orgTd = null;
       }
 
+      if (IndexPipeline > 0) {
+        addressTd = null;
+      }
+
       return (
         <tr>
           {orgTd}
-          <td>{AddressList.address}</td>
-          <td>{pipelineList.d}</td>
-          <td>{pipelineList.l}</td>
+          {addressTd}
+          <td>{pipeline.d}</td>
+          <td>{pipeline.l}</td>
         </tr>
       );
     });
