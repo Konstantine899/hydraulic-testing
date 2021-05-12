@@ -3,6 +3,8 @@ import React from 'react';
 import { CalcRowSpanOrg } from '../CalcRowSpanOrg/CalcRowSpanOrg.js';
 import { CalcRowSpanAddress } from '../CalcRowSpanAddress/CalcRowSpanAddress.js';
 
+import './RowOrg.scss';
+
 export const RowOrg = (props) => {
   const OrgRowSpan = CalcRowSpanOrg({
     CalcDataPipelinesOrg: props.RowDataOrg,
