@@ -7,12 +7,9 @@ import './TableTbody.scss';
 
 // В пропсах должно быть массив состоящий из объектов организаций
 
-export const TableTbody = (props) => {
-  return props.TableBodyData.map(function (org) {
-    return (
-      <tbody>
-        <RowOrg RowDataOrg={org} />
-      </tbody>
-    );
-  });
-};
+export const TableTbody = (props) =>
+  props.ArrayOrgs.map((org) => (
+    <tbody>
+      <RowOrg rowOrg={org} />
+    </tbody>
+  ));

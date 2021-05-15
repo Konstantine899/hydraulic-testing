@@ -9,12 +9,12 @@ import './RowOrg.scss';
 
 export const RowOrg = (props) => {
   const OrgRowSpan = CalcPipelines({
-    CalcDataPipelinesOrg: props.RowDataOrg,
+    CalcDataPipelinesOrg: props.rowOrg,
   });
 
-  return props.RowDataOrg.objects.map(function (Address, IndexAddress) {
+  return props.rowOrg.objects.map(function (Address, IndexAddress) {
     return Address.pipelines.map(function (pipeline, IndexPipeline) {
-      let orgTd = <td rowSpan={OrgRowSpan}>{props.RowDataOrg.org}</td>;
+      let orgTd = <td rowSpan={OrgRowSpan}>{props.rowOrg.org}</td>;
       let addressTd = (
         <td rowSpan={Address.pipelines.length}>{Address.address}</td>
       );
