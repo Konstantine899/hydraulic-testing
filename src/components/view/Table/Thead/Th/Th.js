@@ -5,7 +5,7 @@ import {
   TH_ADDRESS_ORG,
   TH_PIPELINES_D,
   TH_PIPELINES_L,
-} from '../../../../../core/constants/Table_const/Table_const.js';
+} from '../../../constants/constTh.js';
 
 import './Th.scss';
 

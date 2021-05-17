@@ -1,38 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Thead from './Thead/Thead.js';
 import Tbody from './Tbody/Tbody.js';
 
 import './Table.scss';
-
-import { urlApi } from '../../../core/services/api/urlApi.js';
+import { loadingModels } from './../../model/services/loadingModels.js';
 
 export default function Table(props) {
-  const [arrayData, setArrayData] = useState(null);
+  const [data, setData] = useState([]);
 
-  const loadingData = async () => {
-    try {
-      const res = await fetch(urlApi);
-      const data = await res.json();
+  useEffect(function () {
+    loadingModels()
+      .loadingData()
+      .then(function (Result) {
+        setData(Result);
+      });
+  }, []);
 
-      setArrayData(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    loadingData();
-  }, [urlApi]);
-
-  if (typeof arrayData === 'undefined' || arrayData === null) {
-    return <div></div>;
-  }
-  console.log('arrayData', arrayData);
   return (
-    <table>
-      <Thead />
-      <Tbody />
-    </table>
+    <>
+      <table>
+        <Thead />
+        <Tbody data={data} />
+      </table>
+    </>
   );
 }

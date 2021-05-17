@@ -4,8 +4,10 @@ import Th from './Th/Th.js';
 
 export default function Thead(props) {
   return (
-    <thead>
-      <Th />
-    </thead>
+    <>
+      <thead>
+        <Th />
+      </thead>
+    </>
   );
 }

@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { loadingModels } from '../../../../model/services/loadingModels.js';
 
 export default function Row(props) {
+  const organization = props.organization;
+  const buildingList = organization.buildings.map(function (building, index) {
+    return <p key={index}>{building.address}</p>;
+  });
   return (
-    <tr>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-    </tr>
+    <>
+      <tr>
+        <td>{organization.name}</td>
+        <td>{buildingList}</td>
+      </tr>
+    </>
   );
 }

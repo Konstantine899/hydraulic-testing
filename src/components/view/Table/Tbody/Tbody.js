@@ -2,12 +2,16 @@ import React from 'react';
 
 import Row from './Row/Row.js';
 
-import './Tbody.scss';
-
 export default function Tbody(props) {
+  let data = props.data;
+  console.log(data);
+  const listRows = data.map(function (organization, index) {
+    return <Row key={index} organization={organization} />;
+  });
+
   return (
-    <tbody>
-      <Row />
-    </tbody>
+    <>
+      <tbody>{listRows}</tbody>
+    </>
   );
 }
