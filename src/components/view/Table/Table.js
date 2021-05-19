@@ -1,20 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { loadingModels } from '../../model/services/loadingModels.js';
 
 import Thead from './Thead/Thead.js';
 import Tbody from './Tbody/Tbody.js';
 
 import './Table.scss';
-import { loadingModels } from './../../model/services/loadingModels.js';
 
-export default function Table(props) {
+function Table() {
   const [data, setData] = useState([]);
 
   useEffect(function () {
-    loadingModels()
-      .loadingData()
-      .then(function (Result) {
-        setData(Result);
-      });
+    loadingModels().then(
+      (resolve) => {
+        setData(resolve);
+      },
+      (reason) => {
+        console.log('Превет2222', reason);
+        setData([]);
+      }
+    );
   }, []);
 
   return (
@@ -26,3 +31,5 @@ export default function Table(props) {
     </>
   );
 }
+
+export default Table;
