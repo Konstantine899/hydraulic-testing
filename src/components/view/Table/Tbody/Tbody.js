@@ -6,9 +6,9 @@ import './Tbody.scss';
 
 function Tbody(props) {
   let data = props.data;
-  console.log(data);
-  const listRows = data.map((organization, indexOrg) => (
-    <Row key={indexOrg} organization={organization} />
+
+  const listRows = data.map((organization) => (
+    <Row key={organization.id} organization={organization} />
   ));
   return <tbody>{listRows}</tbody>;
 }

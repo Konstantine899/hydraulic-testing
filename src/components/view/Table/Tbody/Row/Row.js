@@ -5,8 +5,6 @@ import { RowSpanOrg } from '../../../../model/services/calculations/RowSpanOrg.j
 function Row(props) {
   const organization = props.organization;
 
-  // console.log('organization', organization);
-
   const mergeRow = RowSpanOrg({
     CalcPipelines: organization,
   });
@@ -20,28 +18,20 @@ function Row(props) {
 
       let Address =
         indexPipeline > 0 ? null : (
-          <td rowSpan={building.pipelines.length} key={indexBuilding}>
-            {building.address}
-          </td>
+          <td rowSpan={building.pipelines.length}>{building.address}</td>
         );
 
-      let pipelineL = <td key={indexPipeline.l}>{pipeline.l}</td>;
-      let pipelineD = <td key={indexPipeline.d}>{pipeline.d}</td>;
-
-      // console.log('Org', Org);
-      // console.log('Address', Address);
-      // console.log('PipelineD', pipelineD);
-      // console.log('pipelineL  ', pipelineL);
+      let pipelineL = <td>{pipeline.l}</td>;
+      let pipelineD = <td>{pipeline.d}</td>;
 
       return (
-        <React.Fragment>
-          <tr>
-            {Org}
-            {Address}
-            {pipelineD}
-            {pipelineL}
-          </tr>
-        </React.Fragment>
+        // Каждый элемент JSX это индекс в массиве которому нужно задать уникальный ключ. Задаю в родительском элементе tr
+        <tr key={`${organization.id} + ${building.id}  + ${pipeline.id}`}>
+          {Org}
+          {Address}
+          {pipelineD}
+          {pipelineL}
+        </tr>
       );
     });
   });

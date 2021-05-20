@@ -7,7 +7,7 @@ export const loadingModels = async () => {
     const response = await fetch(urlApi);
     const resData = await response.json();
     const resultData = resData.map((org) =>
-      OrganizationBuilder(org.org, org.objects)
+      OrganizationBuilder(org.org, org.objects, org.id)
     );
     return resultData;
   } catch (e) {
