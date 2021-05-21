@@ -21,8 +21,6 @@ function ListCard(props) {
     );
   }, []);
 
-  console.log('Data from the server', data);
-
   return data.map(function (obj) {
     return (
       <div key={obj.id} className="listCards">
