@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Table from '../../view/Table/Table.js';
+import ListCard from '../../view/ListCard/ListCard.js';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ export default function Routes(props) {
     <>
       <Router>
         <Switch>
-          <Route exact path="/" component={Table} />
+          <Route exact path="/" component={ListCard} />
         </Switch>
       </Router>
     </>
