@@ -2,18 +2,23 @@ import React from 'react';
 
 import './Row.scss';
 
-// Выводит строку с адресом
+// На каждой итерации выводит строку в которой содержится адрес, длинна и диаметр трубы
 
 function Row(props) {
   let Row = props.Row;
 
-  console.log('Row', Row);
   return Row.map(function (rowAddress, rowAddressIndex) {
-    return (
-      <tr key={`${rowAddress.addressList} + ${rowAddressIndex}`}>
-        <td>{rowAddress.addressList}</td>
-      </tr>
-    );
+    return rowAddress.pipelineList.map(function (pipeline, pipelineIndex) {
+      return (
+        <tr
+          key={`${rowAddress.addressList} + ${rowAddressIndex} + ${pipelineIndex}`}
+        >
+          <td>{rowAddress.addressList}</td>
+          <td>{pipeline.d}</td>
+          <td>{pipeline.l}</td>
+        </tr>
+      );
+    });
   });
 }
 

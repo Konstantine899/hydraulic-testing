@@ -8,6 +8,7 @@ function Tbody(props) {
   const Rows = buildings.map(function (address) {
     return {
       addressList: address.address,
+      pipelineList: address.pipelines,
     };
   });
 
