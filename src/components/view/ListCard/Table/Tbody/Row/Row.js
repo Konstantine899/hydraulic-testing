@@ -9,11 +9,19 @@ function Row(props) {
 
   return Row.map(function (rowAddress, rowAddressIndex) {
     return rowAddress.pipelineList.map(function (pipeline, pipelineIndex) {
+      let Address =
+        pipelineIndex > 0 ? null : (
+          <td rowSpan={rowAddress.pipelineList.length}>
+            {rowAddressIndex}
+            {rowAddress.addressList}
+          </td>
+        );
+
       return (
         <tr
           key={`${rowAddress.addressList} + ${rowAddressIndex} + ${pipelineIndex}`}
         >
-          <td>{rowAddress.addressList}</td>
+          {Address}
           <td>{pipeline.d}</td>
           <td>{pipeline.l}</td>
         </tr>
