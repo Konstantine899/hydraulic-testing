@@ -2,20 +2,19 @@ import React from 'react';
 
 import './Row.scss';
 
+// Выводит строку с адресом
+
 function Row(props) {
   let Row = props.Row;
 
-  const Address = Row.map(function (address, index) {
+  console.log('Row', Row);
+  return Row.map(function (rowAddress, rowAddressIndex) {
     return (
-      <tr key={`${address.address} + ${index}`}>
-        <td>{address.address}</td>
+      <tr key={`${rowAddress.addressList} + ${rowAddressIndex}`}>
+        <td>{rowAddress.addressList}</td>
       </tr>
     );
   });
-
-  console.log('Address', Address);
-
-  return <React.Fragment>{Address}</React.Fragment>;
 }
 
 export default Row;

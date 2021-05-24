@@ -7,7 +7,7 @@ function Tbody(props) {
 
   const Rows = buildings.map(function (address) {
     return {
-      address: address.address,
+      addressList: address.address,
     };
   });
 
