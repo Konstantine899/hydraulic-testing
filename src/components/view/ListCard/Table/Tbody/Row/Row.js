@@ -12,7 +12,6 @@ function Row(props) {
       let Address =
         pipelineIndex > 0 ? null : (
           <td rowSpan={rowAddress.pipelineList.length}>
-            {rowAddressIndex}
             {rowAddress.addressList}
           </td>
         );

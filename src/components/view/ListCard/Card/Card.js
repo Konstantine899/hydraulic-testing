@@ -21,7 +21,6 @@ function Card(props) {
 
   return (
     <div className="Card">
-      <p>{CardData.id}</p>
       <Requisite appData={applicationDetails} />
       <Table buildings={CardData.buildings} />
     </div>

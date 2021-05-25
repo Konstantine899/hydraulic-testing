@@ -1,0 +1,15 @@
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: gray;
+  padding-top: 100px;
+}
+
+.input_wrapper {
+  display: grid;
+  justify-items: center;
+}
+
+input {
+  width: 96%;
+}

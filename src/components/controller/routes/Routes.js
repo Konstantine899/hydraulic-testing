@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ListCard from '../../view/ListCard/ListCard.js';
+import Main from '../../view/layouts/Main.js';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ export default function Routes(props) {
     <>
       <Router>
         <Switch>
-          <Route exact path="/" component={ListCard} />
+          <Route exact path="/" component={Main} />
         </Switch>
       </Router>
     </>

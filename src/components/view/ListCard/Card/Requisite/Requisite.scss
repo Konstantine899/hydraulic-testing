@@ -1,0 +1,16 @@
+.requisite {
+  display: grid;
+}
+
+.requisite_NameOrg {
+  text-align: center;
+}
+
+.requisite_Year {
+  text-align: center;
+}
+
+.requisite_People {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

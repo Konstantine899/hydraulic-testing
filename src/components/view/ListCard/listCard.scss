@@ -1,4 +1,23 @@
 .listCards {
   display: grid;
-  width: 80%;
+  width: 100%;
+  // outline: 2px solid red;
+  // margin: 30px 0px;
+  background: Gray;
+}
+
+.Card {
+  background: Silver;
+}
+
+.requisite_People {
+  margin-bottom: 40px;
+}
+
+.requisite_People_Applicant {
+  text-align: center;
+}
+
+.requisite_People_Implementer {
+  text-align: center;
 }
