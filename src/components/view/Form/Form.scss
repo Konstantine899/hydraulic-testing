@@ -1,13 +1,20 @@
 form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background: gray;
+  background: white;
   padding-top: 100px;
 }
 
 .input_wrapper {
   display: grid;
   justify-items: center;
+}
+.input_wrapper_left {
+  margin-right: 10px;
+}
+
+.input_wrapper_right {
+  margin-left: 10px;
 }
 
 input {

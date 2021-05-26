@@ -21,22 +21,27 @@ function Requisite(props) {
       <div className="requisite_People">
         <div className="requisite_People_Applicant">
           <p>
-            <strong>Заявитель ФИО:</strong> {appData.request_person_name}
+            <strong>Заявитель</strong>
           </p>
           <p>
-            <strong>Заявитель должность:</strong>{' '}
-            {appData.request_person_appointment}
+            <strong> ФИО:</strong> {appData.request_person_name}
+          </p>
+          <p>
+            <strong> должность:</strong> {appData.request_person_appointment}
           </p>
         </div>
         <div className="requisite_People_Implementer">
           <p>
-            <strong>Исполнитель ФИО:</strong> {appData.makers_name}
+            <strong>Исполнитель</strong>
           </p>
           <p>
-            <strong>Исполнитель должность:</strong> {appData.makers_appointment}
+            <strong> ФИО:</strong> {appData.makers_name}
           </p>
           <p>
-            <strong>Исполнитель телефон:</strong> {appData.makers_phone}
+            <strong> должность:</strong> {appData.makers_appointment}
+          </p>
+          <p>
+            <strong> телефон:</strong> {appData.makers_phone}
           </p>
         </div>
       </div>

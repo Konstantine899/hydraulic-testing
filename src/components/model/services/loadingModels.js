@@ -1,6 +1,6 @@
 import { OrganizationBuilder } from '../Organization';
 
-const urlApi = `http://metering.vts.vitebsk.energo.net/index.php?r=hydraulic/default/json&HydraulicSearch[address]=чкал`;
+let urlApi = `http://metering.vts.vitebsk.energo.net/index.php?r=hydraulic/default/json&HydraulicSearch[address]=чка`;
 
 export const loadingModels = async () => {
   try {
