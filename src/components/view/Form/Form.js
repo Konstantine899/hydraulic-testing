@@ -1,29 +1,30 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Input from './Input/Input.js';
 import FilterButton from './Buttons/FilterButton/FilterButton.js';
 import ClearButton from './Buttons/ClearButton/ClearButton.js';
 
+import { useData } from '../../model/services/DataContext/DataContext.js';
+
 import './Form.scss';
 
 function Form() {
-  const defaultValues = {};
-
   const { register, handleSubmit, reset } = useForm({
     mode: 'onBlur',
     defaultValues: defaultValues,
   });
 
   // Логика кнопки Очистить форму
+  const defaultValues = {};
   const onReset = function () {
     return reset(defaultValues);
   };
-
+  const setValue = useData().setValues;
   // Отправка формы
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (InputValue, e) => {
+    setValue({ address: InputValue.address });
+    console.log('InputValue', InputValue);
   };
 
   return (

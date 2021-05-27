@@ -1,10 +1,10 @@
 import { OrganizationBuilder } from '../Organization';
 
-let urlApi = `http://metering.vts.vitebsk.energo.net/index.php?r=hydraulic/default/json&HydraulicSearch[address]=чка`;
+import { urlApi } from '../../model/services/urlApi/urlApi.js';
 
-export const loadingModels = async () => {
+export const loadingModels = async (address) => {
   try {
-    const response = await fetch(urlApi);
+    const response = await fetch(urlApi(address));
     const resData = await response.json();
     const resultData = resData.map((org) =>
       OrganizationBuilder(
