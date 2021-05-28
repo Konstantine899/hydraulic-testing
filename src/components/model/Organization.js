@@ -1,3 +1,4 @@
+//преобразовываю данные с сервера в нужный мне вид
 export function OrganizationBuilder(
   name,
   buildings,

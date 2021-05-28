@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 
 import Input from './Input/Input.js';
@@ -9,18 +9,14 @@ import { useData } from '../../model/services/DataContext/DataContext.js';
 
 import './Form.scss';
 
-function Form() {
+export function Form() {
   const { register, handleSubmit, reset } = useForm({
     mode: 'onBlur',
     defaultValues: defaultValues,
   });
 
-  // Логика кнопки Очистить форму
-  const defaultValues = {};
-  const onReset = function () {
-    return reset(defaultValues);
-  };
   const setValue = useData().setValues;
+
   // Отправка формы
   const onSubmit = (InputValue, e) => {
     setValue({
@@ -30,6 +26,13 @@ function Form() {
       implementer: InputValue.implementer,
     });
     console.log('InputValue', InputValue);
+  };
+
+  // Логика кнопки Очистить форму
+  const defaultValues = {};
+  const onReset = function () {
+    setValue({ nameOrg: '', address: '', applicant: '', implementer: '' });
+    return reset(defaultValues);
   };
 
   return (
@@ -71,5 +74,3 @@ function Form() {
     </form>
   );
 }
-
-export default Form;

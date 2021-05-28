@@ -3,21 +3,24 @@ import { OrganizationBuilder } from '../Organization';
 import { urlApi } from '../../model/services/urlApi/urlApi.js';
 
 export const loadingModels = async (
-  // Передаю значение inputs по которым хочу отфильтровать
+  // loadingModels функция которая получает данные с сервера
+
+  // атрибуты которые являются фильтрами позволяющие получать отфильтрованные данные с сервера
   nameOrg,
   address,
   applicant,
   implementer
 ) => {
   try {
-    // Получаю ответ
+    // Получаю данные с сервера
     const response = await fetch(
+      // получаю отфильтрованный данные с сервера
       urlApi(nameOrg, address, applicant, implementer)
     );
     const resData = await response.json();
     const resultData = resData.map((org) =>
       OrganizationBuilder(
-        // отлавливаю поля из главного массива
+        // Передаю данные с сервера для преобразования
         org.org,
         org.objects,
         org.id,

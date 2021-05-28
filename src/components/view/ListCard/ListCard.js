@@ -6,9 +6,11 @@ import { useData } from '../../model/services/DataContext/DataContext.js';
 
 import Card from './Card/Card.js';
 
+import { Form } from '../Form/Form.js';
+
 import './listCard.scss';
 
-function ListCard() {
+export function ListCard() {
   const [data, setData] = useState([]);
 
   // Отлавливаю данные из DataContext.js
@@ -16,6 +18,13 @@ function ListCard() {
   let address = useData().data.address;
   let applicant = useData().data.applicant;
   let implementer = useData().data.implementer;
+
+  // const clearCardList = Form({
+  //   nameOrg: nameOrg,
+  //   address: address,
+  //   applicant: applicant,
+  //   implementer: implementer,
+  // });
 
   useEffect(
     function () {
@@ -40,5 +49,3 @@ function ListCard() {
     );
   });
 }
-
-export default ListCard;
