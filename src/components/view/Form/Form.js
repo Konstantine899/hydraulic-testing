@@ -23,7 +23,12 @@ function Form() {
   const setValue = useData().setValues;
   // Отправка формы
   const onSubmit = (InputValue, e) => {
-    setValue({ address: InputValue.address });
+    setValue({
+      nameOrg: InputValue.nameOrg,
+      address: InputValue.address,
+      applicant: InputValue.applicant,
+      implementer: InputValue.implementer,
+    });
     console.log('InputValue', InputValue);
   };
 

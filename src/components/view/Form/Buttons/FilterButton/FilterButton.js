@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button } from '@material-ui/core';
 
-function FilterButton({ children, props }) {
+function FilterButton(props) {
   return (
     <Button
       type="submit"

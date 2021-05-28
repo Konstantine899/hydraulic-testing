@@ -3,7 +3,12 @@ import React, { createContext, useContext, useState } from 'react';
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [data, setData] = useState({ address: '' });
+  const [data, setData] = useState({
+    nameOrg: '',
+    address: '',
+    applicant: '',
+    implementer: '',
+  });
 
   const setValues = (values) => {
     setData((prevData) => ({

@@ -8,14 +8,18 @@ import Card from './Card/Card.js';
 
 import './listCard.scss';
 
-function ListCard(props) {
+function ListCard() {
   const [data, setData] = useState([]);
 
+  // Отлавливаю данные из DataContext.js
+  let nameOrg = useData().data.nameOrg;
   let address = useData().data.address;
+  let applicant = useData().data.applicant;
+  let implementer = useData().data.implementer;
 
   useEffect(
     function () {
-      loadingModels(address).then(
+      loadingModels(nameOrg, address, applicant, implementer).then(
         (resolve) => {
           setData(resolve);
         },
@@ -25,7 +29,7 @@ function ListCard(props) {
         }
       );
     },
-    [address]
+    [nameOrg, address, applicant, implementer] // слежу за изменениями
   );
 
   return data.map(function (obj) {
