@@ -1,8 +1,8 @@
 //преобразовываю данные с сервера в нужный мне вид
 export function OrganizationBuilder(
+  id,
   name,
   buildings,
-  id,
   makers_appointment,
   makers_name,
   makers_phone,

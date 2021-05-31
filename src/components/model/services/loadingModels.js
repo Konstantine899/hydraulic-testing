@@ -6,24 +6,26 @@ export const loadingModels = async (
   // loadingModels функция которая получает данные с сервера
 
   // атрибуты которые являются фильтрами позволяющие получать отфильтрованные данные с сервера
-  nameOrg,
-  address,
-  applicant,
-  implementer
+  filters
 ) => {
   try {
     // Получаю данные с сервера
     const response = await fetch(
       // получаю отфильтрованный данные с сервера
-      urlApi(nameOrg, address, applicant, implementer)
+      urlApi(
+        filters.nameOrg,
+        filters.address,
+        filters.applicant,
+        filters.implementer
+      )
     );
     const resData = await response.json();
     const resultData = resData.map((org) =>
       OrganizationBuilder(
         // Передаю данные с сервера для преобразования
+        org.id,
         org.org,
         org.objects,
-        org.id,
         org.makers_appointment,
         org.makers_name,
         org.makers_phone,
