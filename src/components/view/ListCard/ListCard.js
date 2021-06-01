@@ -14,7 +14,7 @@ export function ListCard() {
 
   let filters = useData().isData;
 
-  console.log('catchingData', filters);
+  // console.log('catchingData', filters);
 
   useEffect(
     function () {

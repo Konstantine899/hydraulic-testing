@@ -1,4 +1,4 @@
-import { OrganizationBuilder } from '../Organization';
+import { dataConversion } from '../dataConversion';
 
 import { urlApi } from '../../model/services/urlApi/urlApi.js';
 
@@ -19,22 +19,8 @@ export const loadingModels = async (
         filters.implementer
       )
     );
-    const resData = await response.json();
-    const resultData = resData.map((org) =>
-      OrganizationBuilder(
-        // Передаю данные с сервера для преобразования
-        org.id,
-        org.org,
-        org.objects,
-        org.makers_appointment,
-        org.makers_name,
-        org.makers_phone,
-        org.request_person_appointment,
-        org.request_person_name,
-        org.year,
-        org.isWarning
-      )
-    );
+    const resData = await response.json(); // Получаю данные с сервера
+    const resultData = resData.map(dataConversion); // Передаю ответ то сервера в dataConversion и итерирую преобразованные данные
 
     return resultData;
   } catch (e) {
