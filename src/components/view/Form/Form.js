@@ -6,18 +6,15 @@ import FilterButton from './Buttons/FilterButton/FilterButton.js';
 import ClearButton from './Buttons/ClearButton/ClearButton.js';
 
 import { useData } from '../../model/services/DataContext/DataContext.js';
-import {
-  resetInput,
-  handlerSubmitForm,
-  resetCards,
-} from '../../model/services/DataContext/Inputs.js';
+import { handlerSubmitForm } from '../../model/services/formHandler/handlerSubmitForm.js';
+import { getDefaultFilter } from '../../model/services/formHandler/Filters.js';
 
 import './Form.scss';
 
 export function Form() {
   const { register, handleSubmit, reset } = useForm({
     mode: 'onBlur',
-    resetInput,
+    getDefaultFilter,
   });
 
   const setValue = useData().setValues;
@@ -29,8 +26,8 @@ export function Form() {
 
   // Логика кнопки Очистить форму
   const resetButton = function () {
-    setValue(resetCards());
-    return reset(resetInput);
+    setValue(getDefaultFilter());
+    return reset(getDefaultFilter);
   };
 
   return (
