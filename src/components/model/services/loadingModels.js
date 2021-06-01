@@ -12,12 +12,7 @@ export const loadingModels = async (
     // Получаю данные с сервера
     const response = await fetch(
       // получаю отфильтрованный данные с сервера
-      urlApi(
-        filters.nameOrg,
-        filters.address,
-        filters.applicant,
-        filters.implementer
-      )
+      urlApi(filters)
     );
     const resData = await response.json(); // Получаю данные с сервера
     const resultData = resData.map(dataConversion); // Передаю ответ то сервера в dataConversion и итерирую преобразованные данные
