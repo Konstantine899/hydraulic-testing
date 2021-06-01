@@ -1,10 +1,10 @@
 import React, { createContext, useContext, useState } from 'react';
-import filters from './filters.js';
+import { inputDefault } from './Inputs.js';
 
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [isData, setData] = useState(filters);
+  const [isData, setData] = useState(inputDefault);
 
   const setValues = (values) => {
     setData((prevData) => ({

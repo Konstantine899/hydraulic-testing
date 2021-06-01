@@ -6,33 +6,31 @@ import FilterButton from './Buttons/FilterButton/FilterButton.js';
 import ClearButton from './Buttons/ClearButton/ClearButton.js';
 
 import { useData } from '../../model/services/DataContext/DataContext.js';
+import {
+  resetInput,
+  handlerSubmitForm,
+  resetCards,
+} from '../../model/services/DataContext/Inputs.js';
 
 import './Form.scss';
 
 export function Form() {
   const { register, handleSubmit, reset } = useForm({
     mode: 'onBlur',
-    defaultValues: defaultValues,
+    resetInput,
   });
 
   const setValue = useData().setValues;
 
   // Отправка формы
-  const onSubmit = (InputValue, e) => {
-    setValue({
-      nameOrg: InputValue.nameOrg,
-      address: InputValue.address,
-      applicant: InputValue.applicant,
-      implementer: InputValue.implementer,
-    });
-    console.log('InputValue', InputValue);
+  const onSubmit = (value) => {
+    setValue(handlerSubmitForm(value));
   };
 
   // Логика кнопки Очистить форму
-  const defaultValues = {};
-  const onReset = function () {
-    setValue({ nameOrg: '', address: '', applicant: '', implementer: '' });
-    return reset(defaultValues);
+  const resetButton = function () {
+    setValue(resetCards());
+    return reset(resetInput);
   };
 
   return (
@@ -70,7 +68,7 @@ export function Form() {
         />
       </div>
       <FilterButton />
-      <ClearButton onReset={onReset} />
+      <ClearButton onReset={resetButton} />
     </form>
   );
 }
