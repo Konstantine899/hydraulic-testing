@@ -9,6 +9,13 @@ function Row(props) {
 
   return Row.map(function (rowAddress, rowAddressIndex) {
     return rowAddress.pipelineList.map(function (pipeline, pipelineIndex) {
+      let Checkbox =
+        pipelineIndex > 0 ? null : (
+          <td rowSpan={rowAddress.pipelineList.length}>
+            <input type="checkbox" />
+          </td>
+        );
+
       let Address =
         pipelineIndex > 0 ? null : (
           <td rowSpan={rowAddress.pipelineList.length}>
@@ -20,6 +27,11 @@ function Row(props) {
         <tr
           key={`${rowAddress.addressList} + ${rowAddressIndex} + ${pipelineIndex}`}
         >
+          {/* <td rowSpan={rowAddress.length}>
+            {rowAddressIndex}
+            <input type="checkbox" />
+          </td> */}
+          {Checkbox}
           {Address}
           <td>{pipeline.d}</td>
           <td>{pipeline.l}</td>

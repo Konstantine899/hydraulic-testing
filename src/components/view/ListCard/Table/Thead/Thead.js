@@ -12,6 +12,9 @@ function Thead(props) {
   return (
     <thead>
       <tr>
+        <th>
+          <input type="checkbox" />
+        </th>
         <th>{TH_ADDRESS_ORG}</th>
         <th>{TH_PIPELINES_D}</th>
         <th>{TH_PIPELINES_L}</th>
