@@ -17,16 +17,16 @@ export function Form() {
     getDefaultFilter,
   });
 
-  const setValue = useData().setValues;
+  const setContext = useData().setContext;
 
   // Отправка формы
   const onSubmit = (value) => {
-    setValue(handlerSubmitForm(value));
+    setContext(handlerSubmitForm(value));
   };
 
   // Логика кнопки Очистить форму
   const resetButton = function () {
-    setValue(getDefaultFilter());
+    setContext(getDefaultFilter());
     return reset(getDefaultFilter);
   };
 

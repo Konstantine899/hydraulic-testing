@@ -7,7 +7,7 @@ const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const [isData, setData] = useState(getDefaultFilter);
 
-  const setValues = (values) => {
+  const setContext = (values) => {
     setData((prevData) => ({
       ...prevData,
       ...values,
@@ -15,7 +15,7 @@ export const DataProvider = ({ children }) => {
   };
 
   return (
-    <DataContext.Provider value={{ isData, setValues }}>
+    <DataContext.Provider value={{ isData, setContext }}>
       {children}
     </DataContext.Provider>
   );
