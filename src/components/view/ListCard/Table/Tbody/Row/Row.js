@@ -5,32 +5,24 @@ import './Row.scss';
 // На каждой итерации выводит строку в которой содержится адрес, длинна и диаметр трубы
 
 function Row(props) {
-  let Row = props.Row;
-
-  return Row.map(function (rowAddress, rowAddressIndex) {
-    return rowAddress.pipelineList.map(function (pipeline, pipelineIndex) {
+  return props.dataRow.map(function (objectTest, objectTestIndex) {
+    return objectTest.pipelines.map(function (pipeline, pipelineIndex) {
       let Checkbox =
         pipelineIndex > 0 ? null : (
-          <td rowSpan={rowAddress.pipelineList.length}>
+          <td rowSpan={objectTest.pipelines.length}>
             <input type="checkbox" />
           </td>
         );
 
       let Address =
         pipelineIndex > 0 ? null : (
-          <td rowSpan={rowAddress.pipelineList.length}>
-            {rowAddress.addressList}
-          </td>
+          <td rowSpan={objectTest.pipelines.length}>{objectTest.addresses}</td>
         );
 
       return (
         <tr
-          key={`${rowAddress.addressList} + ${rowAddressIndex} + ${pipelineIndex}`}
+          key={`${objectTest.addresses} + ${objectTestIndex} + ${pipelineIndex}`}
         >
-          {/* <td rowSpan={rowAddress.length}>
-            {rowAddressIndex}
-            <input type="checkbox" />
-          </td> */}
           {Checkbox}
           {Address}
           <td>{pipeline.d}</td>

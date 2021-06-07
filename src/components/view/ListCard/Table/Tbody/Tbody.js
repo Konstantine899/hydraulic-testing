@@ -3,19 +3,16 @@ import React from 'react';
 import Row from './Row/Row.js';
 
 function Tbody(props) {
-  console.log('Tbody', props);
-  let objectHydraulicTest = props.objectHydraulicTest;
-
-  const Rows = objectHydraulicTest.map(function (objectTest) {
+  const dataRow = props.objectHydraulicTest.map(function (objectTest) {
     return {
-      addressList: objectTest.address,
-      pipelineList: objectTest.pipelines,
+      addresses: objectTest.address,
+      pipelines: objectTest.pipelines,
     };
   });
 
   return (
     <tbody>
-      <Row Row={Rows} />
+      <Row dataRow={dataRow} />
     </tbody>
   );
 }

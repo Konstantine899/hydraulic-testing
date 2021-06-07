@@ -5,7 +5,7 @@ import { ListCard } from '../ListCard/ListCard.js';
 
 import './Main.scss';
 
-function Main(props) {
+function Main() {
   return (
     <div className="main">
       <Form />
