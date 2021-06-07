@@ -3,7 +3,7 @@ export function dataConversion(dataServer) {
   return {
     id: dataServer.id,
     name: dataServer.org, // имя организации
-    buildings: dataServer.objects, // объекты objects
+    objectHydraulicTest: dataServer.objects, // объекты objects
     makers_appointment: dataServer.makers_appointment, // Должности исполнителя
     makers_name: dataServer.makers_name, // Исполнитель
     makers_phone: dataServer.makers_phone, // телефон исполнителя

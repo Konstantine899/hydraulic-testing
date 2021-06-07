@@ -22,7 +22,7 @@ function Card(props) {
   return (
     <div className="Card">
       <Requisite appData={applicationDetails} />
-      <Table buildings={CardData.buildings} />
+      <Table objectHydraulicTest={CardData.objectHydraulicTest} />
     </div>
   );
 }

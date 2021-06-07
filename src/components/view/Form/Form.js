@@ -51,10 +51,10 @@ export function Form() {
       <div className="input_wrapper input_wrapper_right">
         <Input
           ref={register}
-          id="address"
+          id="objectHydraulicTest"
           type="text"
           label="Адрес"
-          name="address"
+          name="objectHydraulicTest"
         />
         <Input
           ref={register}

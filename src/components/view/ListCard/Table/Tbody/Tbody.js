@@ -3,12 +3,13 @@ import React from 'react';
 import Row from './Row/Row.js';
 
 function Tbody(props) {
-  let buildings = props.buildings;
+  console.log('Tbody', props);
+  let objectHydraulicTest = props.objectHydraulicTest;
 
-  const Rows = buildings.map(function (address) {
+  const Rows = objectHydraulicTest.map(function (objectTest) {
     return {
-      addressList: address.address,
-      pipelineList: address.pipelines,
+      addressList: objectTest.address,
+      pipelineList: objectTest.pipelines,
     };
   });
 

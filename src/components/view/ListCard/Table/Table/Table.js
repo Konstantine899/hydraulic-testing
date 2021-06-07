@@ -4,12 +4,13 @@ import Thead from '../Thead/Thead.js';
 import Tbody from '../Tbody/Tbody.js';
 
 export default function BasicTable(props) {
-  const buildings = props.buildings;
+  const objectHydraulicTest = props.objectHydraulicTest;
+  console.log('objectHydraulicTest', objectHydraulicTest);
 
   return (
     <table>
       <Thead />
-      <Tbody buildings={buildings} />
+      <Tbody objectHydraulicTest={objectHydraulicTest} />
     </table>
   );
 }

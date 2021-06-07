@@ -1,6 +1,6 @@
 const handlerSubmitForm = (value) => ({
   nameOrg: value.nameOrg,
-  address: value.address,
+  objectHydraulicTest: value.objectHydraulicTest,
   applicant: value.applicant,
   implementer: value.implementer,
 });

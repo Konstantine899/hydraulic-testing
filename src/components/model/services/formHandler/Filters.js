@@ -1,6 +1,6 @@
 const getDefaultFilter = () => ({
   nameOrg: '',
-  address: '',
+  objectHydraulicTest: '',
   applicant: '',
   implementer: '',
 });

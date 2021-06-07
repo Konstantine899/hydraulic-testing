@@ -5,7 +5,10 @@ export function urlApi(filters) {
 
   // Связываю свои переменные с полями в БД
   mainUrl.searchParams.append('HydraulicSearch[name]', filters.nameOrg); // Наименование организации
-  mainUrl.searchParams.append('HydraulicSearch[address]', filters.address); // append Вставляет элемент в конец mainUrl
+  mainUrl.searchParams.append(
+    'HydraulicSearch[address]',
+    filters.objectHydraulicTest
+  ); // append Вставляет элемент в конец mainUrl
   mainUrl.searchParams.append(
     'HydraulicSearch[requestPerson]',
     filters.applicant
