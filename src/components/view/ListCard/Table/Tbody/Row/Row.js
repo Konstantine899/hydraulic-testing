@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { ObjectTest } from './ObjectTest/ObjectTest.js';
+import { PipelineD } from './PipelineD/PipelineD.js';
+import { PipelineL } from './PipelineL/PipelineL.js';
+
 import './Row.scss';
 
 // На каждой итерации выводит строку в которой содержится адрес, длинна и диаметр трубы
@@ -14,19 +18,14 @@ function Row(props) {
           </td>
         );
 
-      let Address =
-        pipelineIndex > 0 ? null : (
-          <td rowSpan={objectTest.pipelines.length}>{objectTest.addresses}</td>
-        );
-
       return (
         <tr
           key={`${objectTest.addresses} + ${objectTestIndex} + ${pipelineIndex}`}
         >
           {Checkbox}
-          {Address}
-          <td>{pipeline.d}</td>
-          <td>{pipeline.l}</td>
+          <ObjectTest pipelineIndex={pipelineIndex} objectTest={objectTest} />
+          <PipelineD pipeline={pipeline} />
+          <PipelineL pipeline={pipeline} />
         </tr>
       );
     });
