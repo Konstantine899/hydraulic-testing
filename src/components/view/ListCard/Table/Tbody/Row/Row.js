@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Checkbox } from '../../../../Form/Checkbox/Checkbox.js';
+
 import { ObjectTest } from './ObjectTest/ObjectTest.js';
 import { PipelineD } from './PipelineD/PipelineD.js';
 import { PipelineL } from './PipelineL/PipelineL.js';
@@ -11,18 +13,11 @@ import './Row.scss';
 function Row(props) {
   return props.dataRow.map(function (objectTest, objectTestIndex) {
     return objectTest.pipelines.map(function (pipeline, pipelineIndex) {
-      let Checkbox =
-        pipelineIndex > 0 ? null : (
-          <td rowSpan={objectTest.pipelines.length}>
-            <input type="checkbox" />
-          </td>
-        );
-
       return (
         <tr
           key={`${objectTest.addresses} + ${objectTestIndex} + ${pipelineIndex}`}
         >
-          {Checkbox}
+          <Checkbox pipelineIndex={pipelineIndex} objectTest={objectTest} />
           <ObjectTest pipelineIndex={pipelineIndex} objectTest={objectTest} />
           <PipelineD pipeline={pipeline} />
           <PipelineL pipeline={pipeline} />
