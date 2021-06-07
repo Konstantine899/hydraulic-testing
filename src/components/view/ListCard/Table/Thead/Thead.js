@@ -1,4 +1,7 @@
 import React from 'react';
+import { FormControlLabel } from '@material-ui/core';
+
+import { HandleCheckbox } from '../../../Form/Checkbox/handleCheckbox.js';
 
 import './Thead.scss';
 
@@ -13,9 +16,11 @@ function Thead(props) {
     <thead>
       <tr>
         <th>
-          <input type="checkbox" />
+          <FormControlLabel
+            control={<HandleCheckbox />}
+            label={TH_ADDRESS_ORG}
+          />
         </th>
-        <th>{TH_ADDRESS_ORG}</th>
         <th>{TH_PIPELINES_D}</th>
         <th>{TH_PIPELINES_L}</th>
       </tr>

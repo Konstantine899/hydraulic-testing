@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Checkbox } from '../../../../Form/Checkbox/Checkbox.js';
+// import { Checkbox } from '../../../../Form/Checkbox/Checkbox.js';
 
 import { ObjectTest } from './ObjectTest/ObjectTest.js';
 import { PipelineD } from './PipelineD/PipelineD.js';
@@ -15,9 +15,8 @@ function Row(props) {
     return objectTest.pipelines.map(function (pipeline, pipelineIndex) {
       return (
         <tr
-          key={`${objectTest.addresses} + ${objectTestIndex} + ${pipelineIndex}`}
+          key={`${objectTest.address} + ${objectTestIndex} + ${pipelineIndex}`}
         >
-          <Checkbox pipelineIndex={pipelineIndex} objectTest={objectTest} />
           <ObjectTest pipelineIndex={pipelineIndex} objectTest={objectTest} />
           <PipelineD pipeline={pipeline} />
           <PipelineL pipeline={pipeline} />
