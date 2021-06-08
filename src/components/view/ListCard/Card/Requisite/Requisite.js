@@ -8,7 +8,7 @@ function Requisite(props) {
     <div className="requisite">
       <div>
         <p className="requisite_NameOrg">
-          <strong>Наименование организации:</strong> {props.appData.name}
+          <strong>Наименование организации:</strong> <br /> {props.appData.name}
         </p>
       </div>
       <div className="requisite_Year">

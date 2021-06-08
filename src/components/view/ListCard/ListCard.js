@@ -14,8 +14,6 @@ export function ListCard() {
 
   let filters = useData().isData;
 
-  // console.log('catchingData', filters);
-
   useEffect(
     function () {
       loadingModels(filters).then(
