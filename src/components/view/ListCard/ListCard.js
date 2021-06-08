@@ -10,6 +10,8 @@ import './listCard.scss';
 export function ListCard() {
   const [isData, setData] = useState([]);
 
+  // Просто для коммита
+
   // Отлавливаю данные из DataContext.js
 
   let filters = useData().isData;
