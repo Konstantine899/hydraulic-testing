@@ -6,8 +6,9 @@ export const HandleCheckbox = forwardRef((props, ref) => {
 
   // Слушаю событие клика
   const toggleCheckbox = (event) => {
-    setChecked(event.target.checked);
-    console.log(event.target.checked);
+    const eventChecked = event.target.checked;
+    setChecked(eventChecked);
+    localStorage.setItem(`eventChecked ${props.id}`, eventChecked);
   };
 
   return <Checkbox checked={checked} onChange={toggleCheckbox} />;

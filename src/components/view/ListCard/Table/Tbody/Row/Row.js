@@ -17,7 +17,11 @@ function Row(props) {
         <tr
           key={`${objectTest.address} + ${objectTestIndex} + ${pipelineIndex}`}
         >
-          <ObjectTest pipelineIndex={pipelineIndex} objectTest={objectTest} />
+          <ObjectTest
+            id={objectTest.id}
+            pipelineIndex={pipelineIndex}
+            objectTest={objectTest}
+          />
           <PipelineD pipeline={pipeline} />
           <PipelineL pipeline={pipeline} />
         </tr>
