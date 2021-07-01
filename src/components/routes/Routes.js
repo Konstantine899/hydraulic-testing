@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Main from '../../view/layouts/Main.js';
+import Main from '../Main/Main.js';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-export default function Routes(props) {
+export default function Routes() {
   return (
     <>
       <Router>

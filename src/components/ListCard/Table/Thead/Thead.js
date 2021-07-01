@@ -9,7 +9,7 @@ import {
   TH_ADDRESS_ORG,
   TH_PIPELINES_D,
   TH_PIPELINES_L,
-} from '../../../../model/services/constants/constTh.js';
+} from '../../../services/constants/constTh.js';
 
 function Thead(props) {
   return (
