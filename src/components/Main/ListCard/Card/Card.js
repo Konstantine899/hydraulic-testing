@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Requisite from './Requisite/Requisite.js';
-import Table from '../Table/Table/Table.js';
+import Table from './Table/Table/Table.js';
 
 import './Card.scss';
 

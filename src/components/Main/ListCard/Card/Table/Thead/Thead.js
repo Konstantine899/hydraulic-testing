@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormControlLabel } from '@material-ui/core';
 
-import { HandleCheckbox } from '../../../Form/Checkbox/handleCheckbox.js';
+import { HandleCheckbox } from '../../Checkbox/handleCheckbox.js';
 
 import './Thead.scss';
 
@@ -9,7 +9,7 @@ import {
   TH_ADDRESS_ORG,
   TH_PIPELINES_D,
   TH_PIPELINES_L,
-} from '../../../services/constants/constTh.js';
+} from '../../../../../services/constants/constTh.js';
 
 function Thead(props) {
   return (

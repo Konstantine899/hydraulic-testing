@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Form } from '../Form/Form.js';
-import { ListCard } from '../ListCard/ListCard.js';
+import { Form } from './Form/Form.js';
+import { ListCard } from './ListCard/ListCard.js';
 
 import './Main.scss';
 

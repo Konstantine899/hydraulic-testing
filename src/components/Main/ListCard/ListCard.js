@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { loadingModels } from '../services/api/loadingModels.js';
-import { useData } from '../services/DataContext/DataContext.js';
+import { loadingModels } from '../../services/api/loadingModels.js';
+import { useData } from '../../services/DataContext/DataContext.js';
 
 import Card from './Card/Card.js';
 
