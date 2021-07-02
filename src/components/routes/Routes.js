@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Main from '../Main/Main.js';
+import { Information } from '../Information/Information.js';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ export default function Routes() {
     <>
       <Router>
         <Switch>
-          <Route exact path="/" component={Main} />
+          <Route exact path="/" component={Information} />
         </Switch>
       </Router>
     </>

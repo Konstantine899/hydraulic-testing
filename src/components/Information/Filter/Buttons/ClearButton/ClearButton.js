@@ -1,12 +1,10 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 
-function ClearButton(props) {
+export function ClearButton({ resetButton }) {
   return (
-    <Button onClick={props.onReset} variant="contained" color="secondary">
+    <Button onClick={resetButton} variant="contained" color="secondary">
       Очистить форму
     </Button>
   );
 }
-
-export default ClearButton;

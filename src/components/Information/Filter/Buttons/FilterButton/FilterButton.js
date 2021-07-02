@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button } from '@material-ui/core';
 
-function FilterButton(props) {
+export function FilterButton(props) {
   return (
     <Button
       type="submit"
@@ -15,5 +15,3 @@ function FilterButton(props) {
     </Button>
   );
 }
-
-export default FilterButton;

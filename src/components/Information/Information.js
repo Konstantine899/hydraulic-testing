@@ -1,17 +1,15 @@
 import React from 'react';
 
-import { Form } from './Form/Form.js';
+import { Filter } from './Filter/Filter.js';
 import { ListCard } from './ListCard/ListCard.js';
 
-import './Main.scss';
+import './Information.scss';
 
-function Main() {
+export function Information() {
   return (
     <div className="main">
-      <Form />
+      <Filter />
       <ListCard />
     </div>
   );
 }
-
-export default Main;

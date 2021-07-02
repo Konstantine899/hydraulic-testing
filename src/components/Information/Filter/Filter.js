@@ -1,17 +1,17 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import Input from './Input/Input.js';
-import FilterButton from './Buttons/FilterButton/FilterButton.js';
-import ClearButton from './Buttons/ClearButton/ClearButton.js';
+import { Input } from './Input/Input.js';
+import { FilterButton } from './Buttons/FilterButton/FilterButton.js';
+import { ClearButton } from './Buttons/ClearButton/ClearButton.js';
 
 import { useData } from '../../services/DataContext/DataContext.js';
 import { handlerSubmitForm } from '../../services/formHandler/handlerSubmitForm.js';
 import { getDefaultFilter } from '../../services/formHandler/Filters.js';
 
-import './Form.scss';
+import './Filter.scss';
 
-export function Form() {
+export function Filter() {
   const { register, handleSubmit, reset } = useForm({
     mode: 'onBlur',
     getDefaultFilter,
@@ -65,7 +65,7 @@ export function Form() {
         />
       </div>
       <FilterButton />
-      <ClearButton onReset={resetButton} />
+      <ClearButton resetButton={resetButton} />
     </form>
   );
 }
