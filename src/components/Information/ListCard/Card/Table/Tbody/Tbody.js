@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { createContext, useContext } from 'react';
+import { CardContext } from '../../../ListCard.js';
 
 import Row from './Row/Row.js';
 
-function Tbody({ tbodyData }) {
-  const rowData = tbodyData.map(function (objectTest) {
+export const rowContext = createContext();
+
+function Tbody() {
+  const { data } = useContext(CardContext);
+
+  const rowData = data.objectHydraulicTest.map(function (objectTest) {
     return {
       id: objectTest.id,
       address: objectTest.address,
@@ -13,7 +18,9 @@ function Tbody({ tbodyData }) {
 
   return (
     <tbody>
-      <Row rowData={rowData} />
+      <rowContext.Provider value={{ rowData }}>
+        <Row />
+      </rowContext.Provider>
     </tbody>
   );
 }

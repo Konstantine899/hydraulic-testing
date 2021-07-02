@@ -1,26 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { CardContext } from '../ListCard.js';
 
 import Requisite from './Requisite/Requisite.js';
 import Table from './Table/Table/Table.js';
 
 import './Card.scss';
 
-export function Card({ CardData }) {
+export function Card() {
+  const { data } = useContext(CardContext);
+
   // Получение реквизитов заявки
   const requisiteData = {
-    name: CardData.name, // Наименование организации
-    year: CardData.year, // Дата заявки
-    request_person_name: CardData.request_person_name, // ФИО заявителя
-    request_person_appointment: CardData.request_person_appointment, // должности заявителя
-    makers_name: CardData.makers_name, // Исполнитель ФИО
-    makers_appointment: CardData.makers_appointment, // Исполнитель Должность
-    makers_phone: CardData.makers_phone, // телефон исполнителя
+    name: data.name, // Наименование организации
+    year: data.year, // Дата заявки
+    request_person_name: data.request_person_name, // ФИО заявителя
+    request_person_appointment: data.request_person_appointment, // должности заявителя
+    makers_name: data.makers_name, // Исполнитель ФИО
+    makers_appointment: data.makers_appointment, // Исполнитель Должность
+    makers_phone: data.makers_phone, // телефон исполнителя
   };
 
   return (
     <div className="Card">
       <Requisite requisiteData={requisiteData} />
-      <Table tableData={CardData.objectHydraulicTest} />
+      <Table tableData={data.objectHydraulicTest} />
     </div>
   );
 }

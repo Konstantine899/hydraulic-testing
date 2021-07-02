@@ -1,6 +1,5 @@
-import React from 'react';
-
-// import { Checkbox } from '../../../../Form/Checkbox/Checkbox.js';
+import React, { createContext, useContext } from 'react';
+import { rowContext } from '../Tbody.js';
 
 import { ObjectTest } from './ObjectTest/ObjectTest.js';
 import { PipelineD } from './PipelineD/PipelineD.js';
@@ -8,22 +7,27 @@ import { PipelineL } from './PipelineL/PipelineL.js';
 
 import './Row.scss';
 
+export const pipelineContext = createContext();
+export const objectTestContext = createContext();
+
 // На каждой итерации выводит строку в которой содержится адрес, длинна и диаметр трубы
 
-function Row({ rowData }) {
+function Row() {
+  const { rowData } = useContext(rowContext);
   return rowData.map(function (objectTest, objectTestIndex) {
     return objectTest.pipelines.map(function (pipeline, pipelineIndex) {
       return (
         <tr
           key={`${objectTest.address} + ${objectTestIndex} + ${pipelineIndex}`}
         >
-          <ObjectTest
-            id={objectTest.id}
-            pipelineIndex={pipelineIndex}
-            objectTest={objectTest}
-          />
-          <PipelineD pipeline={pipeline} />
-          <PipelineL pipeline={pipeline} />
+          <objectTestContext.Provider value={{ pipelineIndex, objectTest }}>
+            <ObjectTest id={objectTest.id} />
+          </objectTestContext.Provider>
+
+          <pipelineContext.Provider value={{ pipeline }}>
+            <PipelineD />
+            <PipelineL />
+          </pipelineContext.Provider>
         </tr>
       );
     });

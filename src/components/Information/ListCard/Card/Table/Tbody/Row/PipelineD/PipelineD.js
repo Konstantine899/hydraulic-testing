@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { pipelineContext } from '../Row.js';
 
-export function PipelineD({ pipeline }) {
+export function PipelineD() {
+  const { pipeline } = useContext(pipelineContext);
   return <td>{pipeline.d}</td>;
 }

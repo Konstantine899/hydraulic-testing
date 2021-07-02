@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 import { loadingModels } from '../../services/api/loadingModels.js';
 import { useData } from '../../services/DataContext/DataContext.js';
@@ -7,10 +7,12 @@ import { Card } from './Card/Card.js';
 
 import './listCard.scss';
 
+// Создаю контекст для карточки
+
+export const CardContext = createContext();
+
 export function ListCard() {
   const [isData, setData] = useState([]);
-
-  // Просто для коммита
 
   // Отлавливаю данные из DataContext.js
 
@@ -34,7 +36,9 @@ export function ListCard() {
   return isData.map(function (data) {
     return (
       <div key={data.id} className="listCards">
-        <Card key={data} CardData={data} />
+        <CardContext.Provider value={{ data }}>
+          <Card />
+        </CardContext.Provider>
       </div>
     );
   });
