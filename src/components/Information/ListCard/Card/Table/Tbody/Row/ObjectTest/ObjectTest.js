@@ -3,12 +3,12 @@ import { FormControlLabel } from '@material-ui/core';
 
 import { HandleCheckbox } from '../../../../Checkbox/handleCheckbox.js';
 
-export function ObjectTest(props) {
-  return props.pipelineIndex > 0 ? null : (
-    <td rowSpan={props.objectTest.pipelines.length}>
+export function ObjectTest({ pipelineIndex, objectTest }) {
+  return pipelineIndex > 0 ? null : (
+    <td rowSpan={objectTest.pipelines.length}>
       <FormControlLabel
-        control={<HandleCheckbox id={props.objectTest.id} />}
-        label={props.objectTest.address}
+        control={<HandleCheckbox id={objectTest.id} />}
+        label={objectTest.address}
       />
     </td>
   );

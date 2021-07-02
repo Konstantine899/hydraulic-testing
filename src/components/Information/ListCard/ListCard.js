@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { loadingModels } from '../../services/api/loadingModels.js';
 import { useData } from '../../services/DataContext/DataContext.js';
 
-import Card from './Card/Card.js';
+import { Card } from './Card/Card.js';
 
 import './listCard.scss';
 
@@ -31,10 +31,10 @@ export function ListCard() {
     Object.values(filters) // слежу за изменениями
   );
 
-  return isData.map(function (obj) {
+  return isData.map(function (data) {
     return (
-      <div key={obj.id} className="listCards">
-        <Card key={obj} CardsData={obj} />
+      <div key={data.id} className="listCards">
+        <Card key={data} CardData={data} />
       </div>
     );
   });

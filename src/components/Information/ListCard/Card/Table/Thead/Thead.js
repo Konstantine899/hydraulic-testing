@@ -11,7 +11,7 @@ import {
   TH_PIPELINES_L,
 } from '../../../../../services/constants/constTh.js';
 
-function Thead(props) {
+function Thead() {
   return (
     <thead>
       <tr>

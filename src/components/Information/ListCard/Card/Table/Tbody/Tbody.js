@@ -2,8 +2,8 @@ import React from 'react';
 
 import Row from './Row/Row.js';
 
-function Tbody(props) {
-  const dataRow = props.objectHydraulicTest.map(function (objectTest) {
+function Tbody({ tbodyData }) {
+  const rowData = tbodyData.map(function (objectTest) {
     return {
       id: objectTest.id,
       address: objectTest.address,
@@ -13,7 +13,7 @@ function Tbody(props) {
 
   return (
     <tbody>
-      <Row dataRow={dataRow} />
+      <Row rowData={rowData} />
     </tbody>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function PipelineD(props) {
-  return <td>{props.pipeline.d}</td>;
+export function PipelineD({ pipeline }) {
+  return <td>{pipeline.d}</td>;
 }

@@ -2,18 +2,18 @@ import React from 'react';
 
 import './Requisite.scss';
 
-function Requisite(props) {
+function Requisite({ requisiteData }) {
   // вывод реквизитов
   return (
     <div className="requisite">
       <div>
         <p className="requisite_NameOrg">
-          <strong>Наименование организации:</strong> <br /> {props.appData.name}
+          <strong>Наименование организации:</strong> <br /> {requisiteData.name}
         </p>
       </div>
       <div className="requisite_Year">
         <p>
-          <strong>Год:</strong> {props.appData.year}
+          <strong>Год:</strong> {requisiteData.year}
         </p>
       </div>
       <div className="requisite_People">
@@ -22,11 +22,11 @@ function Requisite(props) {
             <strong>Заявитель</strong>
           </p>
           <p>
-            <strong> ФИО:</strong> {props.appData.request_person_name}
+            <strong> ФИО:</strong> {requisiteData.request_person_name}
           </p>
           <p>
             <strong> должность:</strong>{' '}
-            {props.appData.request_person_appointment}
+            {requisiteData.request_person_appointment}
           </p>
         </div>
         <div className="requisite_People_Implementer">
@@ -34,13 +34,13 @@ function Requisite(props) {
             <strong>Исполнитель</strong>
           </p>
           <p>
-            <strong> ФИО:</strong> {props.appData.makers_name}
+            <strong> ФИО:</strong> {requisiteData.makers_name}
           </p>
           <p>
-            <strong> должность:</strong> {props.appData.makers_appointment}
+            <strong> должность:</strong> {requisiteData.makers_appointment}
           </p>
           <p>
-            <strong> телефон:</strong> {props.appData.makers_phone}
+            <strong> телефон:</strong> {requisiteData.makers_phone}
           </p>
         </div>
       </div>

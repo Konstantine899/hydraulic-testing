@@ -10,8 +10,8 @@ import './Row.scss';
 
 // На каждой итерации выводит строку в которой содержится адрес, длинна и диаметр трубы
 
-function Row(props) {
-  return props.dataRow.map(function (objectTest, objectTestIndex) {
+function Row({ rowData }) {
+  return rowData.map(function (objectTest, objectTestIndex) {
     return objectTest.pipelines.map(function (pipeline, pipelineIndex) {
       return (
         <tr
