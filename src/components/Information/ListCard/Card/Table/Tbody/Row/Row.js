@@ -9,6 +9,7 @@ import './Row.scss';
 
 export const pipelineContext = createContext();
 export const objectTestContext = createContext();
+export const CheckboxContext = createContext();
 
 // На каждой итерации выводит строку в которой содержится адрес, длинна и диаметр трубы
 
@@ -21,7 +22,9 @@ function Row() {
           key={`${objectTest.address} + ${objectTestIndex} + ${pipelineIndex}`}
         >
           <objectTestContext.Provider value={{ pipelineIndex, objectTest }}>
-            <ObjectTest id={objectTest.id} />
+            <CheckboxContext.Provider value={{ Checked: objectTest }}>
+              <ObjectTest />
+            </CheckboxContext.Provider>
           </objectTestContext.Provider>
 
           <pipelineContext.Provider value={{ pipeline }}>
