@@ -8,7 +8,7 @@ export function ObjectTest() {
   return pipelineIndex > 0 ? null : (
     <td rowSpan={objectTest.pipelines.length}>
       <FormControlLabel
-        control={<HandleCheckbox id={objectTest.id} />}
+        control={<HandleCheckbox />}
         label={objectTest.address}
       />
     </td>
