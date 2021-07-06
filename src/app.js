@@ -1,10 +1,9 @@
 import React from 'react';
 
-import Routes from './components/controller/routes/Routes.js';
+import Routes from './components/routes/Routes.js';
+import { DataProvider } from './components/services/DataContext/DataContext.js';
 
-import { DataProvider } from './components/model/services/DataContext/DataContext.js';
-
-export default function app() {
+export default function App() {
   return (
     <DataProvider>
       <Routes />
