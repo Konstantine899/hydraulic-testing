@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 
-import { getDefaultFilter } from '../formHandler/Filters.js';
+import { getDefaultFilter } from '../../../formHandler/Filters.js';
 
 const DataContext = createContext();
 

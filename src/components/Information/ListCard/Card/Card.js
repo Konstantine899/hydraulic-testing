@@ -5,6 +5,9 @@ import { CardContext } from '../ListCard.js';
 import Requisite from './Requisite/Requisite.js';
 import Table from './Table/Table/Table.js';
 
+import { EnableButton } from './ButtonsCard/EnableButton/EnableButton.js';
+import { OffButton } from './ButtonsCard/OffButton/OffButton.js';
+
 import './Card.scss';
 
 export function Card() {
@@ -24,6 +27,10 @@ export function Card() {
   return (
     <div className="Card">
       <Requisite requisiteData={requisiteData} />
+      <div className="CardButton">
+        <EnableButton />
+        <OffButton />
+      </div>
       <Table tableData={data.objectHydraulicTest} />
     </div>
   );

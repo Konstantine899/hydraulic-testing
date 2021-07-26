@@ -1,7 +1,8 @@
 import React, { createContext, useState, useEffect } from 'react';
 
 import { loadingModels } from '../../services/api/loadingModels.js';
-import { useData } from '../../services/DataContext/DataContext.js';
+import { useData } from '../../services/api/context/DataContext/DataContext.js';
+import { ButtonContextProvider } from '../../services/api/context/ButtonContext/buttonContext.js';
 
 import { Card } from './Card/Card.js';
 
@@ -37,7 +38,9 @@ export function ListCard() {
     return (
       <div key={data.id} className="listCards">
         <CardContext.Provider value={{ data }}>
-          <Card />
+          <ButtonContextProvider>
+            <Card />
+          </ButtonContextProvider>
         </CardContext.Provider>
       </div>
     );

@@ -5,7 +5,7 @@ import { Input } from './Input/Input.js';
 import { FilterButton } from './Buttons/FilterButton/FilterButton.js';
 import { ClearButton } from './Buttons/ClearButton/ClearButton.js';
 
-import { useData } from '../../services/DataContext/DataContext.js';
+import { useData } from '../../services/api/context/DataContext/DataContext.js';
 import { handlerSubmitForm } from '../../services/formHandler/handlerSubmitForm.js';
 import { getDefaultFilter } from '../../services/formHandler/Filters.js';
 

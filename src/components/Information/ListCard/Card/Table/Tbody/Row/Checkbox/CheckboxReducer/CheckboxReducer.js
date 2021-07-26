@@ -1,7 +1,11 @@
 export const CheckboxReducer = (state, action) => {
   switch (action.type) {
-    case 'HANDLER_CHECKBOX':
+    case 'TOGGLE_CHECKBOX':
       return { ...state, value: !state.value };
+    case 'CHECKBOX_ON':
+      return { ...state, value: true };
+    case 'CHECKBOX_OFF':
+      return { ...state, value: false };
     default:
       return state;
   }
