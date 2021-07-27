@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ButtonContext } from '../../../../../services/api/context/ButtonContext/buttonContext.js';
+import { ButtonContext } from '../../../../../../services/context/ButtonContext/buttonContext.js';
 import './EnableButton.css';
 
 export const EnableButton = () => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useReducer } from 'react';
 import { Checkbox } from '@material-ui/core';
 import { CheckboxContext } from '../Row.js';
-import { ButtonContext } from '../../../../../../../services/api/context/ButtonContext/buttonContext.js';
+import { ButtonContext } from '../../../../../../../../services/context/ButtonContext/buttonContext.js';
 import { CheckboxReducer } from './CheckboxReducer/CheckboxReducer.js';
 import DoneTwoToneIcon from '@material-ui/icons/DoneTwoTone';
 

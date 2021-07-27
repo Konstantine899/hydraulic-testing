@@ -13,3 +13,9 @@
 .requisite_People {
   margin-bottom: 40px;
 }
+.cardListButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 40px 5px 0px 5px;
+}

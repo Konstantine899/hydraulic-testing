@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from 'react';
-import { CardContext } from '../../../ListCard.js';
+import { CardContext } from '../../../Cards.js';
 
 import Row from './Row/Row.js';
 

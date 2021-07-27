@@ -1,15 +1,15 @@
 import React from 'react';
 
 import { Filter } from './Filter/Filter.js';
-import { ListCard } from './ListCard/ListCard.js';
+import { PageCards } from './PageCards/PageCards.js';
 
-import './Information.scss';
+import './Main.scss';
 
-export function Information() {
+export function Main() {
   return (
     <div className="main">
       <Filter />
-      <ListCard />
+      <PageCards />
     </div>
   );
 }

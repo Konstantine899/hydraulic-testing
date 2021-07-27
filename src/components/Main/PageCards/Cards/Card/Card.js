@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { CardContext } from '../ListCard.js';
+import { CardContext } from '../Cards.js';
 
 import Requisite from './Requisite/Requisite.js';
 import Table from './Table/Table/Table.js';
