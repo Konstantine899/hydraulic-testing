@@ -1,8 +1,8 @@
 import React, { useState, createContext } from 'react';
 
-export const ButtonContext = createContext();
+export const ButtonsCardContext = createContext();
 
-export const ButtonContextProvider = ({ children }) => {
+export const ButtonsCardContextProvider = ({ children }) => {
   const [stateButton, setStateButton] = useState([0, 0]);
 
   const handleEnableButton = () => {
@@ -14,10 +14,10 @@ export const ButtonContextProvider = ({ children }) => {
   };
 
   return (
-    <ButtonContext.Provider
+    <ButtonsCardContext.Provider
       value={{ handleEnableButton, handleOffButton, stateButton }}
     >
       {children}
-    </ButtonContext.Provider>
+    </ButtonsCardContext.Provider>
   );
 };

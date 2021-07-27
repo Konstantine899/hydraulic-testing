@@ -1,8 +1,8 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 
 import { loadingModels } from '../../../services/api/loadingModels.js';
 import { useData } from '../../../services/context/DataContext/DataContext.js';
-import { ButtonContextProvider } from '../../../services/context/ButtonContext/buttonContext.js';
+import { ButtonsCardContextProvider } from '../../../services/context/ButtonsCardContext/ButtonsCardContext.js';
 
 import { OnButton } from '../Buttons/OnButton/OnButton.js';
 import { OffButton } from '../Buttons/OffButton/OffButton.js';
@@ -40,9 +40,9 @@ export function Cards() {
   const cardsList = isData.map((data) => (
     <div key={data.id} className="listCards">
       <CardContext.Provider value={{ data }}>
-        <ButtonContextProvider>
+        <ButtonsCardContextProvider>
           <Card />
-        </ButtonContextProvider>
+        </ButtonsCardContextProvider>
       </CardContext.Provider>
     </div>
   ));

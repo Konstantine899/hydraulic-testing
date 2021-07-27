@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalButtonContext } from '../../../../services/context/GlobalButtonContext/GlobalButtonContext.js';
 import './OnButton.scss';
 
 export const OnButton = () => {
-  return <button className="CardsOnButton">Выбрать все</button>;
+  const { handleGlobalOnButton } = useContext(GlobalButtonContext);
+  return (
+    <button className="CardsOnButton" onClick={() => handleGlobalOnButton()}>
+      Выбрать все
+    </button>
+  );
 };

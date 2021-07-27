@@ -1,13 +1,15 @@
 import React, { useEffect, useContext, useReducer } from 'react';
 import { Checkbox } from '@material-ui/core';
 import { CheckboxContext } from '../Row.js';
-import { ButtonContext } from '../../../../../../../../services/context/ButtonContext/buttonContext.js';
+import { ButtonsCardContext } from '../../../../../../../../services/context/ButtonsCardContext/ButtonsCardContext.js';
+import { GlobalButtonContext } from '../../../../../../../../services/context/GlobalButtonContext/GlobalButtonContext.js';
 import { CheckboxReducer } from './CheckboxReducer/CheckboxReducer.js';
 import DoneTwoToneIcon from '@material-ui/icons/DoneTwoTone';
 
 export const HandleCheckbox = () => {
   const { Checked } = useContext(CheckboxContext);
-  const { stateButton } = useContext(ButtonContext);
+  const { stateButton } = useContext(ButtonsCardContext);
+  const { stateGlobalButton } = useContext(GlobalButtonContext);
 
   const initialState = {
     value: localStorage.getItem(` ${Checked.id}`) !== null ? true : false, // возвращает все кроме ноля
@@ -26,6 +28,14 @@ export const HandleCheckbox = () => {
   }, [checkboxState]);
 
   useEffect(() => {
+    stateGlobalButton[0] > 0 ? handlerGlobalOnButton() : null;
+  }, [stateGlobalButton[0]]);
+
+  useEffect(() => {
+    stateGlobalButton[1] > 0 ? handlerGlobalOffButton() : null;
+  }, [stateGlobalButton[1]]);
+
+  useEffect(() => {
     stateButton[0] > 0 ? handlerEnableButton() : null;
   }, [stateButton[0]]);
 
@@ -36,6 +46,10 @@ export const HandleCheckbox = () => {
   const toggleCheckbox = () => checkboxDispatch({ type: 'TOGGLE_CHECKBOX' });
   const handlerEnableButton = () => checkboxDispatch({ type: 'CHECKBOX_ON' });
   const handlerOffButton = () => checkboxDispatch({ type: 'CHECKBOX_OFF' });
+  const handlerGlobalOnButton = () =>
+    checkboxDispatch({ type: 'CHECKBOX_GLOBAL_ON' });
+  const handlerGlobalOffButton = () =>
+    checkboxDispatch({ type: 'CHECKBOX_GLOBAL_OFF' });
 
   return (
     <Checkbox

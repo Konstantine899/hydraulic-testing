@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { ButtonContext } from '../../../../../../services/context/ButtonContext/buttonContext.js';
+import { ButtonsCardContext } from '../../../../../../services/context//ButtonsCardContext/ButtonsCardContext.js';
 import './OffButton.css';
 
 export const OffButton = () => {
-  const { handleOffButton } = useContext(ButtonContext);
+  const { handleOffButton } = useContext(ButtonsCardContext);
   return (
     <button className="OffButton" onClick={() => handleOffButton()}>
       Снять все
