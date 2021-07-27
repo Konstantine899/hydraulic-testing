@@ -13,8 +13,6 @@ export const ButtonContextProvider = ({ children }) => {
     return setStateButton([stateButton[0], stateButton[1] + 1]);
   };
 
-  console.log(stateButton);
-
   return (
     <ButtonContext.Provider
       value={{ handleEnableButton, handleOffButton, stateButton }}

@@ -10,9 +10,7 @@ export const HandleCheckbox = () => {
   const { stateButton } = useContext(ButtonContext);
 
   const initialState = {
-    value: localStorage.getItem(`id: ${Checked.id}`)
-      ? JSON.parse(localStorage.getItem(`id: ${Checked.id}`))
-      : false,
+    value: localStorage.getItem(` ${Checked.id}`) !== null ? true : false, // возвращает все кроме ноля
     id: Checked.id,
   };
 
@@ -23,11 +21,8 @@ export const HandleCheckbox = () => {
 
   useEffect(() => {
     checkboxState.value === false
-      ? localStorage.removeItem(`id: ${Checked.id}`)
-      : localStorage.setItem(
-          `id: ${Checked.id}`,
-          JSON.stringify(checkboxState.value)
-        );
+      ? localStorage.removeItem(` ${Checked.id}`)
+      : localStorage.setItem(` ${Checked.id}`, '');
   }, [checkboxState]);
 
   useEffect(() => {
