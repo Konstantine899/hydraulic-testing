@@ -4,10 +4,10 @@ import { loadingModels } from '../../../../services/api/loadingModels.js';
 import { useData } from '../../../../context/DataContext/DataContext.js';
 import { ButtonsCardContextProvider } from '../../../../context/ButtonsCardContext/ButtonsCardContext.js';
 
-import { OnButton } from '../Buttons/OnButton/OnButton.js';
-import { OffButton } from '../Buttons/OffButton/OffButton.js';
+import { OnButton } from '../Buttons/OnButton/OnButton.jsx';
+import { OffButton } from '../Buttons/OffButton/OffButton.jsx';
 
-import { Card } from './Card/Card.js';
+import { Card } from './Card/Card.jsx';
 
 import './Cards.scss';
 

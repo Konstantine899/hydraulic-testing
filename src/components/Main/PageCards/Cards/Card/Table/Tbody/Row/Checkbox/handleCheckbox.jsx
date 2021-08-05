@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useReducer } from 'react';
 import { Checkbox } from '@material-ui/core';
-import { CheckboxContext } from '../Row.js';
+import { CheckboxContext } from '../Row.jsx';
 import { ButtonsCardContext } from '../../../../../../../../../context/ButtonsCardContext/ButtonsCardContext.js';
 import { GlobalButtonContext } from '../../../../../../../../../context/GlobalButtonContext/GlobalButtonContext.js';
 import { CheckboxReducer } from './CheckboxReducer/CheckboxReducer.js';

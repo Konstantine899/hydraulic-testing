@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 
-import { CardContext } from '../Cards.js';
+import { CardContext } from '../Cards.jsx';
 
-import Requisite from './Requisite/Requisite.js';
-import Table from './Table/Table/Table.js';
+import Requisite from './Requisite/Requisite.jsx';
+import Table from './Table/Table/Table.jsx';
 
-import { EnableButton } from './ButtonsCard/EnableButton/EnableButton.js';
-import { OffButton } from './ButtonsCard/OffButton/OffButton.js';
+import { EnableButton } from './ButtonsCard/EnableButton/EnableButton.jsx';
+import { OffButton } from './ButtonsCard/OffButton/OffButton.jsx';
 
 import './Card.scss';
 

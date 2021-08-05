@@ -1,9 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import { Input } from './Input/Input.js';
-import { FilterButton } from './Buttons/FilterButton/FilterButton.js';
-import { ClearButton } from './Buttons/ClearButton/ClearButton.js';
+import { Input } from './Input/Input.jsx';
+import { FilterButton } from './Buttons/FilterButton/FilterButton.jsx';
+import { ClearButton } from './Buttons/ClearButton/ClearButton.jsx';
 
 import { useData } from '../../../context/DataContext/DataContext.js';
 import { handlerSubmitForm } from '../../../formHandler/handlerSubmitForm.js';

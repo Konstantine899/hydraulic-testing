@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from 'react';
-import { CardContext } from '../../../Cards.js';
+import { CardContext } from '../../../Cards.jsx';
 
-import Row from './Row/Row.js';
+import Row from './Row/Row.jsx';
 
 export const rowContext = createContext();
 

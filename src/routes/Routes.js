@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Main } from '../components/Main/Main.js';
+import { Main } from '../components/Main/Main.jsx';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 

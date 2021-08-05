@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Filter } from './Filter/Filter.js';
-import { PageCards } from './PageCards/PageCards.js';
+import { Filter } from './Filter/Filter.jsx';
+import { PageCards } from './PageCards/PageCards.jsx';
 
 import './Main.scss';
 

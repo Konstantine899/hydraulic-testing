@@ -1,9 +1,9 @@
 import React, { createContext, useContext } from 'react';
-import { rowContext } from '../Tbody.js';
+import { rowContext } from '../Tbody.jsx';
 
-import { ObjectTest } from './ObjectTest/ObjectTest.js';
-import { PipelineD } from './PipelineD/PipelineD.js';
-import { PipelineL } from './PipelineL/PipelineL.js';
+import { ObjectTest } from './ObjectTest/ObjectTest.jsx';
+import { PipelineD } from './PipelineD/PipelineD.jsx';
+import { PipelineL } from './PipelineL/PipelineL.jsx';
 
 import './Row.scss';
 

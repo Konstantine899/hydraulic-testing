@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { pipelineContext } from '../Row.js';
+import { pipelineContext } from '../Row.jsx';
 
 export function PipelineL() {
   const { pipeline } = useContext(pipelineContext);

@@ -1,7 +1,4 @@
 import React from 'react';
-import { FormControlLabel } from '@material-ui/core';
-
-// import { HandleCheckbox } from '../Tbody/Row/ObjectTest/Checkbox/handleCheckbox.js';
 
 import './Thead.scss';
 
