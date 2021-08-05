@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { GlobalButtonContext } from '../../../../services/context/GlobalButtonContext/GlobalButtonContext.js';
+import { GlobalButtonContext } from '../../../../../context/GlobalButtonContext/GlobalButtonContext.js';
 import './OnButton.scss';
 
 export const OnButton = () => {

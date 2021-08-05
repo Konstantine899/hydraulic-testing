@@ -1,8 +1,8 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
-import { loadingModels } from '../../../services/api/loadingModels.js';
-import { useData } from '../../../services/context/DataContext/DataContext.js';
-import { ButtonsCardContextProvider } from '../../../services/context/ButtonsCardContext/ButtonsCardContext.js';
+import { loadingModels } from '../../../../services/api/loadingModels.js';
+import { useData } from '../../../../context/DataContext/DataContext.js';
+import { ButtonsCardContextProvider } from '../../../../context/ButtonsCardContext/ButtonsCardContext.js';
 
 import { OnButton } from '../Buttons/OnButton/OnButton.js';
 import { OffButton } from '../Buttons/OffButton/OffButton.js';

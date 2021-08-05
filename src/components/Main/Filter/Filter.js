@@ -5,9 +5,9 @@ import { Input } from './Input/Input.js';
 import { FilterButton } from './Buttons/FilterButton/FilterButton.js';
 import { ClearButton } from './Buttons/ClearButton/ClearButton.js';
 
-import { useData } from '../../services/context/DataContext/DataContext.js';
-import { handlerSubmitForm } from '../../services/formHandler/handlerSubmitForm.js';
-import { getDefaultFilter } from '../../services/formHandler/Filters.js';
+import { useData } from '../../../context/DataContext/DataContext.js';
+import { handlerSubmitForm } from '../../../formHandler/handlerSubmitForm.js';
+import { getDefaultFilter } from '../../../formHandler/Filters.js';
 
 import './Filter.scss';
 

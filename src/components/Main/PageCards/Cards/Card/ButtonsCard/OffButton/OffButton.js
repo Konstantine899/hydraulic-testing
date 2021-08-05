@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ButtonsCardContext } from '../../../../../../services/context//ButtonsCardContext/ButtonsCardContext.js';
+import { ButtonsCardContext } from '../../../../../../../context/ButtonsCardContext/ButtonsCardContext.js';
 import './OffButton.css';
 
 export const OffButton = () => {
