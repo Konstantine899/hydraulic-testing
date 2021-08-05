@@ -6,28 +6,28 @@ import { FilterButton } from './Buttons/FilterButton/FilterButton.jsx';
 import { ClearButton } from './Buttons/ClearButton/ClearButton.jsx';
 
 import { useData } from '../../../context/DataContext/DataContext.js';
-import { handlerSubmitForm } from '../../../formHandler/handlerSubmitForm.js';
-import { getDefaultFilter } from '../../../formHandler/Filters.js';
+import { formSubmitService } from '../../../services/formService/sortingFormService/formSubmitService.js';
+import { sortService } from '../../../services/formService/sortingFormService/sortService.js';
 
 import './Filter.scss';
 
 export function Filter() {
   const { register, handleSubmit, reset } = useForm({
     mode: 'onBlur',
-    getDefaultFilter,
+    sortService,
   });
 
   const setContext = useData().setContext;
 
   // Отправка формы
   const onSubmit = (value) => {
-    setContext(handlerSubmitForm(value));
+    setContext(formSubmitService(value));
   };
 
   // Логика кнопки Очистить форму
   const resetButton = function () {
-    setContext(getDefaultFilter());
-    return reset(getDefaultFilter);
+    setContext(sortService());
+    return reset(sortService);
   };
 
   return (

@@ -1,8 +1,8 @@
-const getDefaultFilter = () => ({
+const sortService = () => ({
   nameOrg: '',
   objectHydraulicTest: '',
   applicant: '',
   implementer: '',
 });
 
-export { getDefaultFilter };
+export { sortService };

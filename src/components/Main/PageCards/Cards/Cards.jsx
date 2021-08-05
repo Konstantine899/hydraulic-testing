@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-import { loadingModels } from '../../../../services/api/loadingModels.js';
+import { httpLoading } from '../../../../http/httpLoading.js';
 import { useData } from '../../../../context/DataContext/DataContext.js';
 import { ButtonsCardContextProvider } from '../../../../context/ButtonsCardContext/ButtonsCardContext.js';
 
@@ -20,11 +20,11 @@ export function Cards() {
 
   // Отлавливаю данные из DataContext.js
 
-  let filters = useData().isData;
+  let sort = useData().isData;
 
   useEffect(
     function () {
-      loadingModels(filters).then(
+      httpLoading(sort).then(
         (resolve) => {
           setData(resolve);
         },
@@ -34,7 +34,7 @@ export function Cards() {
         }
       );
     },
-    Object.values(filters) // слежу за изменениями
+    Object.values(sort) // слежу за изменениями
   );
 
   const cardsList = isData.map((data) => (

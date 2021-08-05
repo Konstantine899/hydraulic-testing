@@ -1,8 +1,8 @@
-const handlerSubmitForm = (value) => ({
+const formSubmitService = (value) => ({
   nameOrg: value.nameOrg,
   objectHydraulicTest: value.objectHydraulicTest,
   applicant: value.applicant,
   implementer: value.implementer,
 });
 
-export { handlerSubmitForm };
+export { formSubmitService };

@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useState } from 'react';
 
-import { getDefaultFilter } from '../../formHandler/Filters.js';
+import { sortService } from '../../services/formService/sortingFormService/sortService.js';
 
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [isData, setData] = useState(getDefaultFilter);
+  const [isData, setData] = useState(sortService);
 
   const setContext = (values) => {
     setData((prevData) => ({

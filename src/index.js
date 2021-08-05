@@ -7,6 +7,6 @@ import 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import App from './App.js';
+import App from './App.jsx';
 
 ReactDOM.render(<App />, document.getElementById('root'));

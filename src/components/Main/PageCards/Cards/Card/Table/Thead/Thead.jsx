@@ -6,7 +6,7 @@ import {
   TH_ADDRESS_ORG,
   TH_PIPELINES_D,
   TH_PIPELINES_L,
-} from '../../../../../../../constants/constTh.js';
+} from '../../../../../../../constants/table/constTh.js';
 
 function Thead() {
   return (
