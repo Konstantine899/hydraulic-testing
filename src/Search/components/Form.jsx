@@ -26,7 +26,7 @@ export function Form() {
 
   // Логика кнопки Очистить форму
   const resetButton = function () {
-    setContext(sortService());
+    setContext(searchService());
     return reset(searchService);
   };
 
