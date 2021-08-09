@@ -6,15 +6,15 @@ import { SearchButton } from './Buttons/SearchButton/SearchButton.jsx';
 import { ClearButton } from './Buttons/ClearButton/ClearButton.jsx';
 
 import { useData } from '../../core/DataContext/DataContext.js';
-import { responseService } from '../service/searchService/responseService.js';
-import { searchService } from '../service/searchService/searchService.js';
+import { responseService } from '../service/responseService.js';
+import { clearService } from '../service/clearService.js';
 
 import './Form.scss';
 
-export function Form() {
+export const Form = () => {
   const { register, handleSubmit, reset } = useForm({
     mode: 'onBlur',
-    searchService,
+    clearService,
   });
 
   const setContext = useData().setContext;
@@ -26,8 +26,8 @@ export function Form() {
 
   // Логика кнопки Очистить форму
   const resetButton = function () {
-    setContext(searchService());
-    return reset(searchService);
+    setContext(clearService());
+    return reset(clearService);
   };
 
   return (
@@ -68,4 +68,4 @@ export function Form() {
       <ClearButton resetButton={resetButton} />
     </form>
   );
-}
+};

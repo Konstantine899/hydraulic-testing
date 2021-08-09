@@ -1,8 +1,8 @@
-const searchService = () => ({
+const clearService = () => ({
   nameOrg: '',
   objectHydraulicTest: '',
   applicant: '',
   implementer: '',
 });
 
-export { searchService };
+export { clearService };

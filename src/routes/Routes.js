@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Main } from '../Main/components/Main.jsx';
+import { AuthorizationPage } from '../pages/AuthtorizationPage/AuthorizationPage.jsx';
+import { PageCards } from '../pages/CardsPage/CardsPage.jsx';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -9,7 +10,15 @@ export default function Routes() {
     <>
       <Router>
         <Switch>
-          <Route exact path="/" component={Main} />
+          <Route exact path="/" component={AuthorizationPage} />
+          <Route path="/search" component={PageCards} />
+          <Route
+            render={() => (
+              <h1 style={{ color: 'red', textAlign: 'center' }}>
+                404 СТРАНИЦА НЕ НАЙДЕНА
+              </h1>
+            )}
+          />
         </Switch>
       </Router>
     </>

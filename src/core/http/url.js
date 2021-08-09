@@ -1,6 +1,7 @@
-import { HTTP_URL } from '../../constants/http/http.js';
+// import { HTTP_URL } from '../../constants/http/http.js';
 
 export function url(sort) {
+  const HTTP_URL = new URL(`http://metering.vts.vitebsk.energo.net/index.php`);
   HTTP_URL.search = '?r=hydraulic/default/json';
 
   // Связываю свои переменные с полями в БД
