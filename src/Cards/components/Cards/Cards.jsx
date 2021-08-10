@@ -1,7 +1,8 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 
 import { httpLoading } from '../../../core/http/httpLoading.js';
 import { useData } from '../../../core/DataContext/DataContext.js';
+import { AuthContext } from '../../../Authorization/context/AuthContext.js';
 import { ButtonsCardContextProvider } from '../../context/ButtonsCardContext/ButtonsCardContext.js';
 
 import { OnButton } from '../Buttons/OnButton/OnButton.jsx';
@@ -18,21 +19,24 @@ export const CardContext = createContext();
 export function Cards() {
   const [isData, setData] = useState([]);
 
+  const { auth, setAuth } = useContext(AuthContext);
+
   // Отлавливаю данные из DataContext.js
 
   let sort = useData().isData;
 
   useEffect(
     function () {
-      httpLoading(sort).then(
-        (resolve) => {
-          setData(resolve);
-        },
-        (reason) => {
-          console.log('в данном блоке обработка сценария ошибок', reason);
-          setData([]);
-        }
-      );
+      if (auth.isAuth)
+        httpLoading(sort).then(
+          (resolve) => {
+            setData(resolve);
+          },
+          (reason) => {
+            console.log('в данном блоке обработка сценария ошибок', reason);
+            setData([]);
+          }
+        );
     },
     Object.values(sort) // слежу за изменениями
   );

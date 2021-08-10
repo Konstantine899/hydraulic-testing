@@ -13,8 +13,6 @@ export const GlobalButtonContextProvider = ({ children }) => {
     setStateGlobalButton([stateGlobalButton[0], stateGlobalButton[1] + 1]);
   };
 
-  console.log(stateGlobalButton);
-
   return (
     <GlobalButtonContext.Provider
       value={{ handleGlobalOnButton, handleGlobalOffButton, stateGlobalButton }}

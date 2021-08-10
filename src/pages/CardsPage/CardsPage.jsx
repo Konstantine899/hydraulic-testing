@@ -3,7 +3,7 @@ import { GlobalButtonContextProvider } from '../../Cards/context/GlobalButtonCon
 import { Cards } from '../../Cards/components/Cards/Cards.jsx';
 import { Form } from '../../Search/components/Form.jsx';
 
-export const PageCards = () => {
+export const CardsPage = () => {
   return (
     <GlobalButtonContextProvider>
       <Form />

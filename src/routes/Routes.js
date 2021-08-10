@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { AuthorizationPage } from '../pages/AuthtorizationPage/AuthorizationPage.jsx';
-import { PageCards } from '../pages/CardsPage/CardsPage.jsx';
+import { CardsPage } from '../pages/CardsPage/CardsPage.jsx';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ export default function Routes() {
       <Router>
         <Switch>
           <Route exact path="/" component={AuthorizationPage} />
-          <Route path="/search" component={PageCards} />
+          <Route path="/search" component={CardsPage} />
           <Route
             render={() => (
               <h1 style={{ color: 'red', textAlign: 'center' }}>
