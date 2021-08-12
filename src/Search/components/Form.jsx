@@ -1,12 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
 
 import { Input } from './Input/Input.jsx';
 import { SearchButton } from './Buttons/SearchButton/SearchButton.jsx';
 import { ClearButton } from './Buttons/ClearButton/ClearButton.jsx';
 
-import { AuthContext } from '../../Authorization/context/AuthContext.js';
 import { useData } from '../../core/DataContext/DataContext.js';
 import { responseService } from '../service/responseService.js';
 import { clearService } from '../service/clearService.js';
@@ -19,10 +17,7 @@ export const Form = () => {
     clearService,
   });
 
-  const { auth, setAuth } = useContext(AuthContext);
   const setContext = useData().setContext;
-
-  let history = useHistory();
 
   // Отправка формы
   const onSubmit = (value) => {
@@ -37,11 +32,9 @@ export const Form = () => {
 
   return (
     <>
-      {auth.isAuth === false ? (
-        history.push('/')
-      ) : (
+      <div className="formSearch">
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <div className="input_wrapper input_wrapper_left">
+          <div className="input_wrapper">
             <Input
               ref={register}
               id="nameOrg"
@@ -56,8 +49,7 @@ export const Form = () => {
               label="Заявитель"
               name="applicant"
             />
-          </div>
-          <div className="input_wrapper input_wrapper_right">
+
             <Input
               ref={register}
               id="objectHydraulicTest"
@@ -73,10 +65,12 @@ export const Form = () => {
               name="implementer"
             />
           </div>
-          <SearchButton />
-          <ClearButton resetButton={resetButton} />
+          <div className="buttonSearch">
+            <SearchButton />
+            <ClearButton resetButton={resetButton} />
+          </div>
         </form>
-      )}
+      </div>
     </>
   );
 };

@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react';
 import { TextField } from '@material-ui/core';
 
-export const Login = forwardRef((props, ref) => {
+export const InputPassword = forwardRef((props, ref) => {
   return (
     <TextField
-      type="text"
-      placeholder="Введите логин"
-      label="Введите логин"
+      type="password"
+      placeholder="Введите пароль"
+      label="Введите пароль"
       variant="outlined"
       margin="normal"
       inputRef={ref}

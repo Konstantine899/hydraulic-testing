@@ -1,52 +1,52 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext.js';
-import { Login } from '../components/Login/Login.jsx';
-import { Password } from '../components/Password/Password.jsx';
+import { InputLogin } from './InputLogin/InputLogin.jsx';
+import { InputPassword } from './Password/InputPassword.jsx';
+import { User } from '../../User/User.jsx';
+import { AuthLogin } from './Buttons/AuthLogin/AuthLogin.jsx';
 import './Authorization.scss';
-import { useEffect } from 'react';
 
 export function Authorization() {
-  const { auth, setAuth } = useContext(AuthContext);
-  const [login, setlogin] = useState('');
-  const [password, setPassword] = useState('');
+  const { auth, login, password, Authorization, removeToLocalStorage } =
+    useContext(AuthContext);
 
   const { register, handleSubmit, errors } = useForm({
-    defaultValues: { login: login, password: password },
+    defaultValues: { InputLogin, InputPassword },
     mode: 'onBlur',
   });
 
-  let history = useHistory();
-
-  useEffect(() => {
-    if (localStorage.getItem('LOGIN')) {
-      setAuth((auth.isAuth = true)); // авторизую пользователя
-      auth.isAuth === false ? history.push('/') : history.push('/search');
-    }
-  }, []);
-
-  const onSubmit = (value) => {
-    setlogin(localStorage.setItem('LOGIN', value.login)); // отправляю login
-    setPassword(localStorage.setItem('PASSWORD', value.password)); // отправляю password
-    setAuth((auth.isAuth = true)); // авторизую пользователя
-    auth.isAuth === false ? history.push('/') : history.push('/search');
+  const submitForm = (dataForm) => {
+    Authorization(dataForm);
   };
 
   return (
-    <>
-      <h1>Авторизуйтесь в системе</h1>
-
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Login ref={register} id="login" type="text" name="login" />
-        <Password
-          ref={register}
-          id="password"
-          type="password"
-          name="password"
-        />
-        <button>Войти</button>
+    <div className="formAuth">
+      {/* {auth.isAuth === false ? <h1>Вы не авторизованы</h1> : null} */}
+      <form
+        onSubmit={
+          auth.isAuth === false
+            ? handleSubmit(submitForm)
+            : handleSubmit(removeToLocalStorage)
+        }
+      >
+        <div className="formAuth_input">
+          {auth.isAuth === true ? null : (
+            <InputLogin ref={register} id="login" type="text" name="login" />
+          )}
+          {auth.isAuth === true ? null : (
+            <InputPassword
+              ref={register}
+              id="password"
+              type="password"
+              name="password"
+            />
+          )}
+        </div>
+        <div className="isAuth_button">
+          {auth.isAuth === true ? <User /> : <AuthLogin />}
+        </div>
       </form>
-    </>
+    </div>
   );
 }

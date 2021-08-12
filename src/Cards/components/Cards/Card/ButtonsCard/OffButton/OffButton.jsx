@@ -1,12 +1,19 @@
 import React, { useContext } from 'react';
 import { ButtonsCardContext } from '../../../../../context/ButtonsCardContext/ButtonsCardContext.js';
-import './OffButton.css';
+import Button from '@material-ui/core/Button';
+
+import './OffButton.scss';
 
 export const OffButton = () => {
   const { handleOffButton } = useContext(ButtonsCardContext);
   return (
-    <button className="OffButton" onClick={() => handleOffButton()}>
+    <Button
+      variant="contained"
+      color="secondary"
+      className="OffButton"
+      onClick={() => handleOffButton()}
+    >
       Снять все
-    </button>
+    </Button>
   );
 };

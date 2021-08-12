@@ -1,13 +1,19 @@
 import React, { useContext } from 'react';
 import { ButtonsCardContext } from '../../../../../context/ButtonsCardContext/ButtonsCardContext.js';
-import './EnableButton.css';
-import './EnableButton.css';
+import Button from '@material-ui/core/Button';
+
+import './EnableButton.scss';
 
 export const EnableButton = () => {
   const { handleEnableButton } = useContext(ButtonsCardContext);
   return (
-    <button className="EnableButton" onClick={() => handleEnableButton()}>
+    <Button
+      className="EnableButton"
+      variant="contained"
+      color="primary"
+      onClick={() => handleEnableButton()}
+    >
       Выбрать все
-    </button>
+    </Button>
   );
 };

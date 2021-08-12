@@ -27,16 +27,16 @@ export function Cards() {
 
   useEffect(
     function () {
-      if (auth.isAuth)
-        httpLoading(sort).then(
-          (resolve) => {
-            setData(resolve);
-          },
-          (reason) => {
-            console.log('в данном блоке обработка сценария ошибок', reason);
-            setData([]);
-          }
-        );
+      // if (auth.isAuth)
+      httpLoading(sort).then(
+        (resolve) => {
+          setData(resolve);
+        },
+        (reason) => {
+          console.log('в данном блоке обработка сценария ошибок', reason);
+          setData([]);
+        }
+      );
     },
     Object.values(sort) // слежу за изменениями
   );

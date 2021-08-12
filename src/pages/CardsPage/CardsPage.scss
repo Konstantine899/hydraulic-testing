@@ -1,0 +1,12 @@
+.cardsPage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cardsPage_cards {
+  grid-column: 2/4;
+}
+.isAuth_button {
+  display: grid;
+  justify-content: flex-end;
+}
